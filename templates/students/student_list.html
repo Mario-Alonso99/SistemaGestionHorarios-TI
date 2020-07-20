@@ -27,8 +27,8 @@
 			<td>{{ student.estatus }}</td>
 			<td>
 				<a class="btn btn-success" href="#">Ver</a>
-				<a class="btn btn-info" href="#">Editar</a>
-				<a class="btn btn-danger" href="#">Eliminar</a>
+				<a class="btn btn-info" href="{% url 'students:student_update' student.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'students:student_delete' student.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
