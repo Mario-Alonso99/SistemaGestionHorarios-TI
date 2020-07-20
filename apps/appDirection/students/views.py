@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, DeleteView, UpdateView
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
 from django.urls import reverse_lazy
 
 from apps.appDirection.students.models import Student
@@ -27,3 +27,7 @@ class StudentDelete(DeleteView):
 	model = Student
 	template_name = 'students/student_delete.html'
 	success_url = reverse_lazy('students:student_list')
+
+class StudentShow(DetailView):
+    model = Student
+    template_name = 'students/student_show.html'
