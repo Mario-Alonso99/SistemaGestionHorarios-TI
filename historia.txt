@@ -1,0 +1,17 @@
+Este es un proyecto elaborado en Django acerca de la gestión de horarios de la carrera de Tecnologias de la Información en la UTT
+
+Colaboradores:
+Software Innovations MAC
+
+1.- Mario Alberto Alonso Alvarado
+2.- Daniela Muñoz Hernández
+3.- Alba Isela Cuatecontzi Armas
+
+DESARROLLO DEL PROYECTO
+
+-Configuración inicial de la base de datos y del archivo settings.py del proyecto
+-Estructura de ramas a emplear en esta primera fase
+
+-Construcción del primer Módulo (Dirección)
+
+Mario Alberto Alonso Alvarado - > Gestión de Alumnos (En proceso) 
