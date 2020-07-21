@@ -7,8 +7,9 @@
 <p><strong>Especialidad: </strong>{{ object.especialidad }} </p>
 <p><strong>Cuatrimestre: </strong>{{ object.cuatrimestre }} </p>
 <p><strong>Grupo: </strong>{{ object.grupo }} </p>
-<p><strong>Email: </strong>{{ object.email }} </p>
+<p><strong>Correo Electrónico: </strong>{{ object.email }} </p>
 <p><strong>Estatus: </strong>{{ object.estatus }} </p>
+
 
 <a class= "btn btn-success" href="{% url 'students:student_list' %}">Regresar</a>
 <a class= "btn btn-info" href="{% url 'students:student_update' object.id%}">Editar</a>

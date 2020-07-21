@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<a class="btn btn-success" href="#">Descargar Excel</a><br>
+<a class="btn btn-success" href="{% url 'students:report' %}">Descargar Excel</a><br>
 <br>
 <table class="table table-bordered table-striped table-hover">
 	<thead>
@@ -11,7 +11,6 @@
 			<th>Especialidad</th>
 			<th>Cuatrimestre</th>
 			<th>Grupo</th>
-			<th>Estatus</th>
 			<th>Acciones</th>
 		</tr>
 	</thead>
@@ -24,7 +23,6 @@
 			<td>{{ student.especialidad }}</td>
 			<td>{{ student.cuatrimestre }}</td>
 			<td>{{ student.grupo }}</td>
-			<td>{{ student.estatus }}</td>
 			<td>
 				<a class="btn btn-success" href="{% url 'students:student_show' student.id %}">Ver</a>
 				<a class="btn btn-info" href="{% url 'students:student_update' student.id %}">Editar</a>
