@@ -19,8 +19,8 @@ class PlaceForm(forms.ModelForm):
 		}
 
 		widgets = {
-			'nombre': forms.TextInput(attrs={'class':'form-control'}),
-			'tipo': forms.Select(attrs={'class':'form-control'}),
-			'encargado': forms.Select(attrs={'class':'form-control'}),
-			'ubicacion': forms.Select(attrs={'class':'form-control'}),
+			'nombre': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'P7', 'required': 'required'}),
+			'tipo': forms.Select(attrs={'class':'form-control', 'required': 'required'}),
+			'encargado': forms.Select(attrs={'class':'form-control', 'required': 'required'}),
+			'ubicacion': forms.Select(attrs={'class':'form-control', 'required': 'required'}),
 		}
