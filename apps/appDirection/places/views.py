@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 
 from apps.appDirection.places.models import Place
 from apps.appDirection.places.forms import PlaceForm
+from apps.appDirection.places.filters import PlaceFilter
 
 # Create your views here.
 class PlaceCreate(CreateView):
@@ -31,3 +32,8 @@ class PlaceDelete(DeleteView):
 class PlaceShow(DetailView):
     model = Place
     template_name = 'places/place_show.html'
+
+def search(request):
+    place_list = Place.objects.all()
+    place_filter = PlaceFilter(request.GET, queryset=place_list)
+    return render(request, 'places/place_search.html', {'filter': place_filter})

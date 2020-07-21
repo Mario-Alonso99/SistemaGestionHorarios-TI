@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<a class= "btn btn-danger" href="{% url 'students:student_list' %}">Cancelar</a><br>
+<a class= "btn btn-danger" href="{% url 'places:place_list' %}">Cancelar</a><br>
 
 	<table class="table">
 		<tr>
@@ -10,11 +10,10 @@
 		<tr>
 			<form method="get">
 				<p>
+					<th>Encargado: {{ filter.form.encargado }} </th>
+					<th>Ubicación: {{ filter.form.ubicacion }} </th>
+					<th>Tipo: {{ filter.form.tipo }} </th>
 					<th>Nombre: {{ filter.form.nombre }} </th>
-					<th>Matrícula: {{ filter.form.matricula }} </th>
-					<th>Especialidad: {{ filter.form.especialidad }} </th>
-					<th>Cuatrimestre: {{ filter.form.cuatrimestre }} </th>
-					<th>Grupo: {{ filter.form.grupo }} </th>
 					<th><button class="btn btn-primary" type="submit">Buscar</button></th>
 				</p>
 			</form>
@@ -23,33 +22,31 @@
 <table class="table table-bordered table-striped table-hover">
 	<thead>
 		<tr>
-			<th>Matrícula</th>
+			<th>Tipo</th>
+			<th>Encargado</th>
+			<th>Ubicación</th>
 			<th>Nombre</th>
-			<th>Especialidad</th>
-			<th>Cuatrimestre</th>
-			<th>Grupo</th>
 			<th>Acciones</th>
 		</tr>
 	</thead>
 	<tbody>
 		{% if filter.qs %}
-		{% for student in filter.qs %}
+		{% for place in filter.qs %}
 		<tr>
-			<td>{{ student.matricula }}</td>
-			<td>{{ student.nombre }}</td>
-			<td>{{ student.especialidad }}</td>
-			<td>{{ student.cuatrimestre }}</td>
-			<td>{{ student.grupo }}</td>
+			<td>{{ place.tipo }}</td>
+			<td>{{ place.encargado }}</td>
+			<td>{{ place.ubicacion }}</td>
+			<td>{{ place.nombre }}</td>
 			<td>
-				<a class="btn btn-success" href="{% url 'students:student_show' student.id %}">Ver</a>
-				<a class="btn btn-info" href="{% url 'students:student_update' student.id %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'students:student_delete' student.id %}">Eliminar</a>
+				<a class="btn btn-success" href="{% url 'places:place_show' place.id %}">Ver</a>
+				<a class="btn btn-info" href="{% url 'places:place_update' place.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'places:place_delete' place.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		{% else %}
 			<div class="alert alert-danger" role="alert">
-				AVISO: No Hay Registros de Estudiantes. <a href="{% url 'students:student_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
+				AVISO: No Hay Registros de Laboratorios y/o Aulas. <a href="{% url 'places:place_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
 			</div>
 		{% endif %}
 	</tbody>
