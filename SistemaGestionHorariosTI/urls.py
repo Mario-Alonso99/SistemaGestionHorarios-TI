@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from apps.appDirection.students.urls import studentpatterns
+from apps.appDirection.places.urls import placepatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', include (studentpatterns)),
+    path('places/', include (placepatterns)),
 ]
