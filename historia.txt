@@ -15,3 +15,5 @@ DESARROLLO DEL PROYECTO
 -Construcción del primer Módulo (Dirección)
 
 Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20/07/2020) 
+
+Mario Alberto Alonso Alvarato - > Gestión de Aulas/Laboratorios -> Rama MD-GestionAulas/Laboratorios (Gestión en Proceso)
