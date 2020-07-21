@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 
 from apps.appDirection.students.models import Student
 from apps.appDirection.students.forms import StudentForm
+from apps.appDirection.students.filters import StudentFilter
 
 # Create your views here.
 class StudentCreate(CreateView):
@@ -31,3 +32,8 @@ class StudentDelete(DeleteView):
 class StudentShow(DetailView):
     model = Student
     template_name = 'students/student_show.html'
+
+def search(request):
+    student_list = Student.objects.all()
+    student_filter = StudentFilter(request.GET, queryset=student_list)
+    return render(request, 'students/student_search.html', {'filter': student_filter})
