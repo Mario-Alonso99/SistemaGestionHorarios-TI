@@ -14,4 +14,4 @@ DESARROLLO DEL PROYECTO
 
 -Construcción del primer Módulo (Dirección)
 
-Mario Alberto Alonso Alvarado - > Gestión de Alumnos (En proceso) 
+Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20/07/2020) 
