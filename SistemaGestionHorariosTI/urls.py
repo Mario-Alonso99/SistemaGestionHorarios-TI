@@ -18,6 +18,7 @@ from django.urls import path, include
 
 
 from apps.appDirection.students.urls import studentpatterns
+from apps.appDirection.places.urls import placepatterns
 
 
 
@@ -30,6 +31,7 @@ from django.contrib.auth.views import LoginView, logout_then_login
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', include (studentpatterns)),
+<<<<<<< HEAD
 
     
     
@@ -39,3 +41,7 @@ urlpatterns = [
     path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
     path('logout/',logout_then_login, name='logout')
 ]
+=======
+    path('places/', include (placepatterns)),
+]
+>>>>>>> MD-GestionAulas/Laboratorios
