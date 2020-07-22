@@ -2,6 +2,8 @@
 
 {% block content %}
 <a class="btn btn-success" href="{% url 'students:report' %}">Descargar Excel</a><br>
+
+<h3>Bienvenido/a Director: <strong>{{ user.first_name }} {{ user.last_name }}</strong></h3>
 <br>
 <table class="table table-bordered table-striped table-hover">
 	<thead>
