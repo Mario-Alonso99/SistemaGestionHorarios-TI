@@ -16,4 +16,6 @@ DESARROLLO DEL PROYECTO
 
 Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20/07/2020) 
 
-Mario Alberto Alonso Alvarato - > Gestión de Aulas/Laboratorios -> Rama MD-GestionAulas/Laboratorios (Gestión en Proceso)
+Mario Alberto Alonso Alvarado - > Gestión de Aulas/Laboratorios -> Rama MD-GestionAulas/Laboratorios (Gestión Finalizada -> 21/07/2020)
+
+Mario Alberto Alonso Alvarado - > Primer Avance del Inicio de Sesión (Módulo Dirección)
