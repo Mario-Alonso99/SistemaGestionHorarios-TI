@@ -39,7 +39,7 @@ class StudentCreate(CreateView):
 
 class StudentList(ListView):
     queryset = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
-    template_name = 'students/students_list.html'
+    template_name = 'students/student_list.html'
     paginate_by = 30
 
 class StudentUpdate(UpdateView):

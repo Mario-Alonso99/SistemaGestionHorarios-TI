@@ -34,8 +34,9 @@ urlpatterns = [
     
     
     
-    
-    
+    #Linea para el Login en la Raíz del Proyecto
     path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
+
+    path('accounts/login/', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
     path('logout/',logout_then_login, name='logout')
 ]
