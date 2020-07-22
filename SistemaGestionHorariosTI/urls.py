@@ -16,9 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 from apps.appDirection.students.urls import studentpatterns
+
+
+
+
+#Edición para el Login de Inicio de Sesión
+from django.contrib.auth.views import LoginView, logout_then_login
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', include (studentpatterns)),
+
+    
+    
+    
+    
+    
+    path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
+    path('logout/',logout_then_login, name='logout')
 ]
