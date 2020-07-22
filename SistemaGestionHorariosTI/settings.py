@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     'apps.appDirection.teachers',
 
+
+    'apps.appDirection.users',
     #Linea para importar datos
     'import_export',
 ]
