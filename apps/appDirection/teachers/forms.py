@@ -32,7 +32,7 @@ class TeacherForm(forms.ModelForm):
 			'nombre': forms.TextInput(attrs={'class':'form-control'}),
             'email': forms.TextInput(attrs={'class':'form-control'}),
 			'grado_academico': forms.TextInput(attrs={'class':'form-control'}),
-			'tipo': forms.TextInput(attrs={'class':'form-control'}),
+			'tipo': forms.Select(attrs={'class':'form-control'}),
 			'numero_empleado': forms.TextInput(attrs={'class':'form-control'}),
             'password': forms.PasswordInput(attrs={'class':'form-control'}),
 			'estatus': forms.Select(attrs={'class':'form-control'}),

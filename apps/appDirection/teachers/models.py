@@ -1,5 +1,10 @@
 from django.db import models
 
+TEACHER_CHOICES_TIPO = (
+    ('AP', 'AP'),
+    ('TCP', 'TCP'),
+)
+
 TEACHER_CHOICES_ESTATUS = (
     ('Activo', 'Activo'),
     ('Inactivo', 'Inactivo'),
@@ -11,7 +16,7 @@ class Teacher(models.Model):
     nombre = models.TextField(max_length=200, verbose_name="Nombre")
     email = models.TextField(max_length=200, verbose_name="Email", null=False, blank=False)
     grado_academico = models.TextField(max_length=200, verbose_name="Grado academico", default='')
-    tipo = models.TextField(max_length=200, verbose_name="Tipo", default='')
+    tipo = models.TextField(null=False, blank=False, choices=TEACHER_CHOICES_TIPO, default='AP')
     numero_empleado = models.TextField(max_length=200, verbose_name="Número de empleado", default='')
     password = models.TextField(max_length=200, verbose_name="Contraseña", null=False, blank=False)
     estatus = models.TextField(null=False, blank=False, choices=TEACHER_CHOICES_ESTATUS, default='Activo')
