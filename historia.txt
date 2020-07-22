@@ -19,3 +19,10 @@ Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20
 Mario Alberto Alonso Alvarado - > Gestión de Aulas/Laboratorios -> Rama MD-GestionAulas/Laboratorios (Gestión Finalizada -> 21/07/2020)
 
 Mario Alberto Alonso Alvarado - > Primer Avance del Inicio de Sesión (Módulo Dirección)
+
+
+
+
+
+
+Daniela Muñoz Hernández       - > Gestión de Docentes(Gestión Finalizada -> 21/07/2020) 
