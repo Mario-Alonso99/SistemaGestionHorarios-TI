@@ -138,3 +138,4 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 #Parametros del Login para redireccionar despues del logeo
 LOGIN_REDIRECT_URL = reverse_lazy('students:student_list')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
