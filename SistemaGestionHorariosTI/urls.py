@@ -19,6 +19,14 @@ from django.urls import path, include
 from apps.appDirection.students.urls import studentpatterns
 from apps.appDirection.teachers.urls import teacherpatterns
 
+
+
+
+
+
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('students/', include (studentpatterns)),

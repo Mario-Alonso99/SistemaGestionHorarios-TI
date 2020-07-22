@@ -50,7 +50,7 @@ def search(request):
 class TeacherReport(TemplateView):
     def get(self, request, *args, **kwargs):
         teachers = Teacher.objects.all()
-        teachers = Teacher.objects.order_by('grado_academico','tipo')
+        teachers = Teacher.objects.order_by('grado_academico','tipo', 'estatus')
 
         wb = Workbook()
         ws = wb.active
@@ -65,13 +65,15 @@ class TeacherReport(TemplateView):
         controlatorDatos = 4
         controlatorDatos +=1
         #Combinar Celdas
-        ws.merge_cells('B1:F1')
+        ws.merge_cells('B1:H1')
         #Cambiar el Ancho de las Columnas
         ws.column_dimensions['B'].width = 20
-        ws.column_dimensions['C'].width = 35
-        ws.column_dimensions['D'].width = 40
-        ws.column_dimensions['E'].width = 25
-        ws.column_dimensions['F'].width = 40
+        ws.column_dimensions['C'].width = 30
+        ws.column_dimensions['D'].width = 30
+        ws.column_dimensions['E'].width = 30
+        ws.column_dimensions['F'].width = 25
+        ws.column_dimensions['G'].width = 35
+        ws.column_dimensions['H'].width = 30
 
 
         #Modificar el tamaño de las filas
@@ -90,17 +92,28 @@ class TeacherReport(TemplateView):
         ws['D3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['D3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['D3'].font = Font(name='Arial', size=14, bold= True)
-        ws['D3']= 'Grado academico'
+        ws['D3']= 'Email'
 
         ws['E3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['E3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['E3'].font = Font(name='Arial', size=14, bold= True)
-        ws['E3']= 'Tipo'
+        ws['E3']= 'Grado academico'
 
         ws['F3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['F3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['F3'].font = Font(name='Arial', size=14, bold= True)
-        ws['F3']= 'Número de profesor'
+        ws['F3']= 'Tipo'
+
+        ws['G3'].alignment = Alignment(horizontal="center", vertical="center")
+        ws['G3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
+        ws['G3'].font = Font(name='Arial', size=14, bold= True)
+        ws['G3']= 'Número de profesor'
+
+        ws['H3'].alignment = Alignment(horizontal="center", vertical="center")
+        ws['H3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
+        ws['H3'].font = Font(name='Arial', size=14, bold= True)
+        ws['H3']= 'Estatus'
+
 
 
 
@@ -115,16 +128,24 @@ class TeacherReport(TemplateView):
             ws.cell(row = cont, column = 3).value = teacher.nombre
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 4).value = teacher.grado_academico
+            ws.cell(row = cont, column = 4).value = teacher.email
             ws.cell(row = cont, column = 4).font = Font(name='Arial', size=10)
 
-
-            ws.cell(row = cont, column = 5).value = teacher.tipo
+            ws.cell(row = cont, column = 5).value = teacher.grado_academico
             ws.cell(row = cont, column = 5).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 6).value = teacher.numero_empleado
-            ws.cell(row = cont, column = 6).alignment = Alignment(horizontal="center", vertical="center")
+
+            ws.cell(row = cont, column = 6).value = teacher.tipo
+           
             ws.cell(row = cont, column = 6).font = Font(name='Arial', size=10)
+
+            ws.cell(row = cont, column = 7).value = teacher.numero_empleado
+            
+            ws.cell(row = cont, column = 7).font = Font(name='Arial', size=10)
+
+            ws.cell(row = cont, column = 8).value = teacher.estatus
+            
+            ws.cell(row = cont, column = 8).font = Font(name='Arial', size=10)
 
             cont +=1
 

@@ -26,7 +26,7 @@ class Teacher(models.Model):
     class Meta:
         verbose_name = "Docente"
         verbose_name_plural = "Docentes"
-        ordering = ['grado_academico', 'tipo']
+        ordering = ['grado_academico', 'tipo', 'estatus']
 
     def __str__(self):
         return self.nombre
