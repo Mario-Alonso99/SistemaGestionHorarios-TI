@@ -1,18 +1,17 @@
 {% extends 'base/base.html' %}
-
 {% block content %}
+    <a class= "btn btn-danger" href="{% url 'places:place_list' %}">Cancelar</a><br>
 
-<h2>Información del <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong>. Encargado: <strong>{{ object.encargado }}</strong></h2><br>	
+    <center><h2>Información del <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong><br><br> Encargado: <strong>{{ object.encargado }}</strong></h2></center>	
+    <hr width=100%  align="center"  size=10   noshade="noshade">	
+    <h3><strong>Tipo: </strong>{{ object.tipo }} </h3>
+    <h3><strong>Encargado: </strong>{{ object.encargado }} </h3>
+    <h3><strong>Ubicación: </strong>{{ object.ubicacion }} </h3>
+    <h3><strong>Nombre: </strong>{{ object.nombre }} </h3>
+    <br>
 
-<h3><strong>Tipo: </strong>{{ object.tipo }} </h3>
-<h3><strong>Encargado: </strong>{{ object.encargado }} </h3>
-<h3><strong>Ubicación: </strong>{{ object.ubicacion }} </h3>
-<h3><strong>Nombre: </strong>{{ object.nombre }} </h3>
-<br>
-
-
-<a class= "btn btn-success" href="{% url 'places:place_list' %}">Regresar</a>
-<a class= "btn btn-info" href="{% url 'places:place_update' object.id%}">Editar</a>
-<a class="btn btn-danger" href="{% url 'places:place_delete' object.id %}">Eliminar</a>
+    <a class= "btn btn-success" href="{% url 'places:place_list' %}">Regresar</a>
+    <a class= "btn btn-info" href="{% url 'places:place_update' object.id%}">Editar</a>
+    <a class="btn btn-danger" href="{% url 'places:place_delete' object.id %}">Eliminar</a>
 
 {% endblock %}

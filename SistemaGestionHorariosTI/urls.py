@@ -23,7 +23,11 @@ from django.urls import path, include
 
 
 #Importación de los recursos de las Apps (Urls)
+<<<<<<< HEAD
 from apps.appDirection.students.urls import studentpatterns
+=======
+
+>>>>>>> MD-GestionAulas/Laboratorios
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
 
@@ -45,23 +49,50 @@ from apps.appDirection.teachers.urls import teacherpatterns
 
 
 
+<<<<<<< HEAD
+=======
+#Importación de los Recrusos para Login
+
+
+
+
+
+
+
+
+>>>>>>> MD-GestionAulas/Laboratorios
 
 #Patters de las Urls
 urlpatterns = [
     #Patterns de las Apps
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('students/', include (studentpatterns)),
 
     
     
+=======
+
+    path('places/', include (placepatterns)),
+
+>>>>>>> MD-GestionAulas/Laboratorios
 
 
 
 
 
 
+<<<<<<< HEAD
 
 
     
      
 ]
+=======
+    
+    
+
+
+    
+]
+>>>>>>> MD-GestionAulas/Laboratorios

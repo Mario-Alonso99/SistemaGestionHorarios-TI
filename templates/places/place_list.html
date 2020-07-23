@@ -1,8 +1,8 @@
 {% extends 'base/base.html' %}
-
 {% block content %}
 <a class="btn btn-success" href="{% url 'places:report' %}">Descargar Excel</a><br>
-<br>
+<h3>Bienvenido/a Director: <strong>{{ user.first_name }} {{ user.last_name }}</strong></h3>
+<hr width=100%  align="center"  size=10   noshade="noshade">	
 <table class="table table-bordered table-striped table-hover">
 	<thead>
 		<tr>
@@ -28,7 +28,6 @@
 			</td>
 		</tr>
 		{% endfor %}
-		
 		{% else %}
 			<div class="alert alert-danger" role="alert">
 				AVISO: No Hay Registros de Laboratorios y/o Aulas. <a href="{% url 'places:place_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
@@ -47,7 +46,6 @@
      	 <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> 
     	{% endif %}
     </li>
-
 	<li>	
 		<!-- Menú de paginación -->
 			{% if is_paginated %}
@@ -81,5 +79,4 @@
 			{% endif %}
 	</li>
 </ul> 
-
 {% endblock%}

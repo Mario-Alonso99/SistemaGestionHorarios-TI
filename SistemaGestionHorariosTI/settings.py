@@ -37,14 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     
+=======
+    #Apps a instala
+>>>>>>> MD-GestionAulas/Laboratorios
     'apps.appDirection.students',
     'apps.appDirection.places',
+    
+    
 
+<<<<<<< HEAD
     'apps.appDirection.teachers',
 
 
 
+=======
+>>>>>>> MD-GestionAulas/Laboratorios
 
 
 
