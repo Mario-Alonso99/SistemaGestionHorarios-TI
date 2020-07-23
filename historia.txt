@@ -20,8 +20,8 @@ Mario Alberto Alonso Alvarado - > Gestión de Aulas/Laboratorios -> Rama MD-Gest
 
 Mario Alberto Alonso Alvarado - > Primer Avance del Inicio de Sesión (Módulo Dirección)
 
-
-
+Mario Alberto Alonso Alvarado - > Gestión del Login de Inicio de Sesión para Director (Primera Versión, Aun suceptible a cambios - > 22/07/2020)
+Mario Alberto Alonso Alvarado, Realice cambios de diseño y estructuración de scripts hacia las Ramas de Alumnos y Laboratorios.
 
 
 
