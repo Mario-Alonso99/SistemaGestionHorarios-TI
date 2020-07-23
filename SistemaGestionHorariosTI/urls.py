@@ -20,6 +20,8 @@ from django.urls import path, include
 from apps.appDirection.students.urls import studentpatterns
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
+from apps.appDirection.users.views import Login, logoutUser
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -36,9 +38,13 @@ urlpatterns = [
     path('students/', include (studentpatterns)),
     
     
-    path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
-    path('logout/',logout_then_login, name='logout'),
+    #path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
+    #path('logout/',logout_then_login, name='logout'),
     
     path('places/', include (placepatterns)),
     path('teachers/', include (teacherpatterns)),
+
+
+    path('accounts/login/', Login.as_view(), name='login'),
+    path('logout/',login_required(logoutUser), name='logout'),
 ]

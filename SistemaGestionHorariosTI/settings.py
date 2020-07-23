@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from django.urls import reverse_lazy
+#from django.urls import reverse_lazy
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -141,5 +141,5 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 #Parametros del Login para redireccionar despues del logeo
-LOGIN_REDIRECT_URL = reverse_lazy('students:student_list')
-LOGOUT_REDIRECT_URL = reverse_lazy('login')
+#LOGIN_REDIRECT_URL = reverse_lazy('students:student_list')
+#LOGOUT_REDIRECT_URL = reverse_lazy('login')

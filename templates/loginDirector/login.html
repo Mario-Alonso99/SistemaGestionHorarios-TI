@@ -1,39 +1,51 @@
 {% extends 'base/base.html' %}
 
-{% block title %}
-Mascotas
-{% endblock %}
+<title>{% block title %} SGH-TI {% endblock %}</title>
+
 {% block navbar%}
+
 {% endblock %}
+
 {% block content %}
 <br>
-<form method="post">
-	{% csrf_token %}
-	 <div class="row">
-    	<div class="col-md-6 col-md-offset-3">
-    		<div class="form-group">
-        		<label for="username">Nombre de usuario:</label>
-        		<input class="form-control" type="text" name="username">
-    	   </div>
-        </div>
-    </div>    
-    <div class="row">
-    	<div class="col-md-6 col-md-offset-3">
-    		<div class="form-group">
-        		<label for="username">Contraseña:</label>
-        		<input class="form-control" type="password" name="password">
-    	   </div>
-        </div>
-    </div>
-    <div class="row">
-    	<div class="col-md-6 col-md-offset-3">
-    		<div class="form-group">
-                <a href="#">Olvidé mi contraseña</a>
-        		<input class="btn btn-primary" type="submit" value="Ingresar">
-    	   </div>
-        </div>
-    </div>
-</form>
+<center><h3><strong>Dirección UTT - ITI</strong></h3></center>
+<div class="alert alert-success alert-dismissible" role="alert"></div>
+	<form method="post">
+		{% csrf_token %}
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="form-group">
+						{% if form.error_messages %}
+							<div class="alert alert-danger alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
+									<span aria-hidden ="true">&times;</span>
+								</button>
+								<strong>ADVERTENCIA: </strong> {{ form.get_invalid_login_error }}
+							</div>
+						{% endif %}
 
-
+						<label for="username">Nombre de usuario:</label>
+						{{ form.username }}
+						<small style="color:red;">*Ingresa tu nombre de usuario</small>
+					</div>
+				</div>
+			</div>   
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="form-group">
+						<label for="username">Contraseña:</label>
+						{{ form.password }}
+						<small style="color:red;">*Ingresa tu contraseña</small>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="form-group">
+						<a href="#">Olvidé mi contraseña</a>
+						<input class="btn btn-primary" type="submit" value="Ingresar">
+					</div>
+				</div>
+			</div>
+		</form>
 {% endblock %}
