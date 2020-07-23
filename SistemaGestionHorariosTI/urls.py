@@ -13,13 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+#Importación de Recursos del Administrador
 from django.contrib import admin
 from django.urls import path, include
 
 
+
+
+
+
+#Importación de los recursos de las Apps (Urls)
 from apps.appDirection.students.urls import studentpatterns
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
+
+
+
+
+
+
+#Importación de los Recrusos para Login
 from apps.appDirection.users.views import Login, logoutUser
 from django.contrib.auth.decorators import login_required
 
@@ -28,23 +41,23 @@ from django.contrib.auth.decorators import login_required
 
 
 
-#Edición para el Login de Inicio de Sesión
-from django.contrib.auth.views import LoginView, logout_then_login
 
-
-
+#Patters de las Urls
 urlpatterns = [
+    #Patterns de las Apps
     path('admin/', admin.site.urls),
     path('students/', include (studentpatterns)),
-    
-    
-    #path('', LoginView.as_view(template_name='loginDirector/login.html'), name="login"),
-    #path('logout/',logout_then_login, name='logout'),
-    
     path('places/', include (placepatterns)),
     path('teachers/', include (teacherpatterns)),
 
 
+
+
+
+
+
+
+    #Patterns de los Inicio de Sesión
     path('accounts/login/', Login.as_view(), name='login'),
     path('logout/',login_required(logoutUser), name='logout'),
 ]

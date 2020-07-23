@@ -37,14 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Apps a instala
     'apps.appDirection.students',
     'apps.appDirection.places',
-
     'apps.appDirection.teachers',
-
-
     'apps.appDirection.users',
-    #Linea para importar datos
+
+
+
+
+
+    #Importación de Datos
     'import_export',
 ]
 
