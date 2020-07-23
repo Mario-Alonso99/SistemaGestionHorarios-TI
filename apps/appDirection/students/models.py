@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
 STUDENT_CHOICES_ESPECIALIDAD = (
     ('Área Entornos Virtuales y Negocios Digitales', 'Área Entornos Virtuales y Negocios Digitales'),
     ('Área Infraestructura de Redes Digitales', 'Área Infraestructura de Redes Digitales'),
