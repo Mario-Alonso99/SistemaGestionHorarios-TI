@@ -14,22 +14,18 @@ from tablib import Dataset
 from .resources import StudentResource
 from .models import Student
 
-#Lineas Extras
+#Lineas de importación de los requerimientos necesarios de registro de Administradores
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from apps.appDirection.students.forms import RegistroForm
 
 # Create your views here.
-#Formulario de Registro de Usuario
+
+#Formulario de Registro de Administradores
 class RegistroUsuario(CreateView):
     model = User
     form_class = RegistroForm
     template_name = 'students/registrar.html'
     success_url = reverse_lazy('students:student_list')
-
-#Vista de Login
-def login(request):
-    return render(request, 'loginDirector/login.html')
 
 class StudentCreate(CreateView):
     model = Student

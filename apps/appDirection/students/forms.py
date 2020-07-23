@@ -1,11 +1,11 @@
 from django import forms
 from apps.appDirection.students.models import Student
 
-#Lineas Extras
+#Lineas del formulario de registro de Administradores
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-
+#Módelo para formulario de Registro de Estudiantes
 class StudentForm(forms.ModelForm):
 	class Meta:
 		model = Student
@@ -26,7 +26,7 @@ class StudentForm(forms.ModelForm):
 			'especialidad': 'Especialidad',
 			'cuatrimestre': 'Cuatrimestre',
 			'grupo': 'Grupo',
-			'email': 'Email',
+			'email': 'Correo electrónico',
 			'password': 'Contraseña',
 			'estatus': 'Estatus',
 		}
@@ -42,7 +42,7 @@ class StudentForm(forms.ModelForm):
 			'estatus': forms.Select(attrs={'class':'form-control'}),
 		}
 
-#Lineas Extras, Registro de Campos Extras en el Administrador de Django
+#Módelo para formulario de Registro de Administrador
 class RegistroForm(UserCreationForm):
 	class Meta:
 		model = User

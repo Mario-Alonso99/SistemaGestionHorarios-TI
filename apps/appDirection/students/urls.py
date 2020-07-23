@@ -1,10 +1,7 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from apps.appDirection.students.views import StudentCreate, StudentList, StudentUpdate, StudentDelete, StudentShow, search, StudentReport
+from apps.appDirection.students.views import StudentCreate, StudentList, StudentUpdate, StudentDelete, StudentShow, search, StudentReport, RegistroUsuario
 from .views import importar 
-
-#Lineas Extras, importación de la vista para el Registro de Usuario
-from apps.appDirection.students.views import RegistroUsuario
 
 studentpatterns = ([
     path('new/', login_required (StudentCreate.as_view()), name='student_create'),
