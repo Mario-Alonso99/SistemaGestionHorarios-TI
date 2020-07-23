@@ -21,8 +21,8 @@ PLACE_CHOICES_ENCARGADO = (
 )
 
 PLACE_CHOICES_UBICACION = (
-    ('Edificio F Planta Baja','Edificio F Planta Baja'),
-    ('Edificio F Planta Alta','Edificio F Planta Alta'),
+    ('Edificio P Planta Baja','Edificio P Planta Baja'),
+    ('Edificio P Planta Alta','Edificio P Planta Alta'),
     ('Biblioteca','Biblioteca'),
 )
 

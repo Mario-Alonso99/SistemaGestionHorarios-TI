@@ -1,10 +1,9 @@
 {% extends 'base/base.html' %}
-
 {% block content %}
 <form method="post">
 	{% csrf_token %}
-	<h2>¿Desea eliminar el <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong> del encargado <strong>{{ object.encargado }}</strong>?</h2><br>	
-	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
-	<a class= "btn btn-default" href="{% url 'places:place_list' %}">Cancelar</a>
+		<h2>¿Desea eliminar el <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong> del encargado <strong>{{ object.encargado }}</strong>?</h2><br>	
+		<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+		<a class= "btn btn-default" href="{% url 'places:place_list' %}">Cancelar</a>
 </form>
 {% endblock content %}
