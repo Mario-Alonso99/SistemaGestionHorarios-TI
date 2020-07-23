@@ -23,14 +23,7 @@ from django.urls import path, include
 
 
 #Importación de los recursos de las Apps (Urls)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> MD-GestionLogin
 from apps.appDirection.students.urls import studentpatterns
-=======
-
->>>>>>> MD-GestionAulas/Laboratorios
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
 
@@ -39,34 +32,6 @@ from apps.appDirection.teachers.urls import teacherpatterns
 
 
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-#Importación de los Recrusos para Login
-
-
-
-
-
-
-
-
->>>>>>> MD-GestionAulas/Laboratorios
-
-=======
 #Importación de los Recrusos para Login
 from apps.appDirection.users.views import Login, logoutUser
 from django.contrib.auth.decorators import login_required
@@ -77,52 +42,22 @@ from django.contrib.auth.decorators import login_required
 
 
 
->>>>>>> MD-GestionLogin
 #Patters de las Urls
 urlpatterns = [
     #Patterns de las Apps
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('students/', include (studentpatterns)),
-<<<<<<< HEAD
-
-    
-    
-=======
-
-    path('places/', include (placepatterns)),
-
->>>>>>> MD-GestionAulas/Laboratorios
-=======
     path('places/', include (placepatterns)),
     path('teachers/', include (teacherpatterns)),
 
->>>>>>> MD-GestionLogin
 
 
 
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-    
-     
-]
-=======
-    
-    
-
-
-    
-]
->>>>>>> MD-GestionAulas/Laboratorios
-=======
 
     #Patterns de los Inicio de Sesión
     path('accounts/login/', Login.as_view(), name='login'),
     path('logout/',login_required(logoutUser), name='logout'),
 ]
->>>>>>> MD-GestionLogin

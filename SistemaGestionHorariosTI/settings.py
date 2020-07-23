@@ -37,23 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-    #Apps a instala
->>>>>>> MD-GestionAulas/Laboratorios
-    'apps.appDirection.students',
-    'apps.appDirection.places',
-    
-    
-
-<<<<<<< HEAD
-=======
     #Apps a instala
     'apps.appDirection.students',
     'apps.appDirection.places',
->>>>>>> MD-GestionLogin
     'apps.appDirection.teachers',
     'apps.appDirection.users',
 
@@ -61,17 +47,6 @@ INSTALLED_APPS = [
 
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> MD-GestionAulas/Laboratorios
-
-
-
-
-=======
->>>>>>> MD-GestionLogin
     #Importación de Datos
     'import_export',
 ]
