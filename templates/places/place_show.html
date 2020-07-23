@@ -2,7 +2,7 @@
 {% block content %}
     <a class= "btn btn-danger" href="{% url 'places:place_list' %}">Cancelar</a><br>
 
-    <center><h2>Información del <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong><br> Encargado: <strong>{{ object.encargado }}</strong></h2></center><br>	
+    <center><h2>Información del <strong>{{ object.tipo }}</strong> <strong>{{ object.nombre }}</strong><br><br> Encargado: <strong>{{ object.encargado }}</strong></h2></center><br>	
 
     <h3><strong>Tipo: </strong>{{ object.tipo }} </h3>
     <h3><strong>Encargado: </strong>{{ object.encargado }} </h3>
