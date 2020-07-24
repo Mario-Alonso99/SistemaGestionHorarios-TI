@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <a class= "btn btn-danger" href="{% url 'asignaturas:asignatura_list' %}">Cancelar</a><br>
+
+    <center><h2>Información de la asignatura <strong>{{ object.nombre }}</strong> <br></center>	
+    <hr width=100%  align="center"  size=10   noshade="noshade">	
+    <h3><strong>Nombre: </strong>{{ object.nombre }} </h3>
+    <h3><strong>Especialidad: </strong>{{ object.especialidad }} </h3>
+    <h3><strong>Cuatrimestre: </strong>{{ object.cuatrimestre }} </h3>
+   
+    <br>
+
+    <a class= "btn btn-success" href="{% url 'asignaturas:asignatura_list' %}">Regresar</a>
+    <a class= "btn btn-info" href="{% url 'asignaturas:asignatura_update' object.id%}">Editar</a>
+    <a class="btn btn-danger" href="{% url 'asignaturas:asignatura_delete' object.id %}">Eliminar</a>
+
+{% endblock %}
