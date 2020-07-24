@@ -10,4 +10,4 @@ asignaturapatterns = ([
     path('show/<int:pk>/', login_required (AsignaturaShow.as_view()), name='asignatura_show'),
     path('search/', login_required (search), name='asignatura_search'),
     path('report/', login_required (AsignaturaReport.as_view()), name='report'),
-], 'asignatura')
+], 'asignaturas')

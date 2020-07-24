@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<a class= "btn btn-danger" href="{% url 'asignaturas:asignatura_list' %}">Cancelar</a><br><br>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-success" type="submit">Guardar</button>
+	<a class= "btn btn-danger" href="{% url 'asignaturas:asignatura_list' %}">Cancelar</a>
+</form>
+{% endblock %}
