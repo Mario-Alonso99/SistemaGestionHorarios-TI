@@ -32,13 +32,13 @@ class StudentForm(forms.ModelForm):
 		}
 
 		widgets = {
-			'matricula': forms.TextInput(attrs={'class':'form-control'}),
-			'nombre': forms.TextInput(attrs={'class':'form-control'}),
+			'matricula': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Matrícula', 'required': 'required'}),
+			'nombre': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Nombre', 'required': 'required'}),
 			'especialidad': forms.Select(attrs={'class':'form-control'}),
 			'cuatrimestre': forms.Select(attrs={'class':'form-control'}),
 			'grupo': forms.Select(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'password': forms.PasswordInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Correo Electrónico', 'required': 'required'}),
+			'password': forms.PasswordInput(attrs={'class':'form-control', 'placeholder': 'Contraseña', 'required': 'required'}),
 			'estatus': forms.Select(attrs={'class':'form-control'}),
 		}
 
@@ -51,10 +51,21 @@ class RegistroForm(UserCreationForm):
 				'first_name',
 				'last_name',
 				'email',
+				'password',
+
 			]
 		labels = {
-				'username': 'Nombre de usuario',
-				'first_name': 'Nombre',
-				'last_name': 'Apellidos',
-				'email': 'Correo',
+				'username': 'Nombre de usuario:',
+				'first_name': 'Nombre:',
+				'last_name': 'Apellidos:',
+				'email': 'Correo:',
+				'password': 'Contraseña:',
+		}
+
+		widgets = {
+			'username': forms.TextInput(attrs={'class':'form-control'}),
+			'first_name': forms.TextInput(attrs={'class':'form-control'}),
+			'last_name': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'password': forms.PasswordInput(attrs={'class':'form-control'}),
 		}

@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from apps.appDirection.students.views import StudentCreate, StudentList, StudentUpdate, StudentDelete, StudentShow, search, StudentReport, RegistroUsuario
+from apps.appDirection.students.views import StudentCreate, StudentList, StudentUpdate, StudentDelete, StudentShow, search, StudentReport, RegistroUsuario, EstudianteCreate
 from .views import importar 
 
 studentpatterns = ([
@@ -13,5 +13,8 @@ studentpatterns = ([
     path('report/', login_required (StudentReport.as_view()), name='report'),
     path('import/', login_required (importar), name="student_import"),
 
-    path('registrar/', login_required (RegistroUsuario.as_view()), name='registrar')
+    path('registrar/', login_required (RegistroUsuario.as_view()), name='registrar'),
+
+    path('nuevoregistro/', EstudianteCreate.as_view(), name='estudiante_create')
+
 ], 'students')

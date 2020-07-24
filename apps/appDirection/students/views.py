@@ -3,11 +3,11 @@ from django.views.generic import CreateView, ListView, DeleteView, UpdateView, D
 from django.urls import reverse_lazy
 
 from apps.appDirection.students.models import Student
-from apps.appDirection.students.forms import StudentForm
+from apps.appDirection.students.forms import StudentForm, RegistroForm
 from apps.appDirection.students.filters import StudentFilter
 
 from openpyxl import Workbook
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
 from tablib import Dataset
@@ -176,3 +176,32 @@ def importar(request):
             student_resource.import_data(dataset, dry_run=False) # Actually import now
             return redirect(reverse_lazy('students:student_list'))
     return render(request, 'students/student_import.html')
+
+#Pruba de Almacenamiento de dos formularios distintos
+class  EstudianteCreate(CreateView):
+    model = Student
+    template_name = 'students/student_formCreate.html'
+    form_class = StudentForm
+    second_form_class = RegistroForm
+    success_url = reverse_lazy('students:student_list')
+
+    def get_context_data(self, **kwargs):
+        context = super(EstudianteCreate, self).get_context_data(**kwargs)
+        if 'form' not in context:
+            context['form'] = self.form_class(self.request.GET)
+        if 'form2' not in context:
+            context['form2'] = self.second_form_class(self.request.GET)
+        return context
+    
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object
+        form = self.form_class(request.POST)
+        form2 = self.second_form_class(request.POST)
+        
+        if form.is_valid and form2.is_valid():
+            Estudiante = form.save(commit=False)
+            Estudiante.password = form2.save()
+            Estudiante.save()
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            return self.render_to_response(self.get_context_data(form=form, form2=form2))
