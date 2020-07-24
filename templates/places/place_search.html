@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block content %}
+	<a class= "btn btn-danger" href="{% url 'places:place_list' %}">Cancelar</a><br>
+	<table class="table">
+		<tr>
+			<td><h4><strong>Buscar por:</strong></h4></td>
+		</tr>
+		<tr>
+			<form method="get">
+				<p>
+					<th>Encargado: {{ filter.form.encargado }} </th>
+					<th>Ubicación: {{ filter.form.ubicacion }} </th>
+					<th>Tipo: {{ filter.form.tipo }} </th>
+					<th>Nombre: {{ filter.form.nombre }} </th>
+					<th><button class="btn btn-primary" type="submit">Buscar</button></th>
+				</p>
+			</form>
+		</tr>
+	</table>
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Tipo</th>
+				<th>Encargado</th>
+				<th>Ubicación</th>
+				<th>Nombre</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if filter.qs %}
+			{% for place in filter.qs %}
+			<tr>
+				<td>{{ place.tipo }}</td>
+				<td>{{ place.encargado }}</td>
+				<td>{{ place.ubicacion }}</td>
+				<td>{{ place.nombre }}</td>
+				<td>
+					<a class="btn btn-success" href="{% url 'places:place_show' place.id %}">Ver</a>
+					<a class="btn btn-info" href="{% url 'places:place_update' place.id %}">Editar</a>
+					<a class="btn btn-danger" href="{% url 'places:place_delete' place.id %}">Eliminar</a>
+				</td>
+			</tr>
+			{% endfor %}
+			{% else %}
+				<div class="alert alert-danger" role="alert">
+					AVISO: No Hay Registros de Laboratorios y/o Aulas. <a href="{% url 'places:place_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
+				</div>
+			{% endif %}
+		</tbody>
+	</table>
+	<ul class="pager">
+		<li>
+			{% if page_obj.has_previous %}
+			<a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+			{% endif %}
+		</li>
+		<li>
+			{% if page_obj.has_next %}
+			<a href="?page={{ page_obj.next_page_number }}">Siguiente</a> 
+			{% endif %}
+		</li>
+	</ul> 
+{% endblock %}

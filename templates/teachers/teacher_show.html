@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<p><strong>Matrícula: </strong>{{ object.matricula }} </p>
+<p><strong>Nombre: </strong>{{ object.nombre }} </p>
+<p><strong>Email: </strong>{{ object.email }} </p>
+<p><strong>Grado academico: </strong>{{ object.grado_academico }} </p>
+<p><strong>Tipo: </strong>{{ object.tipo }} </p>
+<p><strong>Número de empleado: </strong>{{ object.numero_empleado }} </p>
+<p><strong>Estatus: </strong>{{ object.estatus }} </p>
+
+
+<a class= "btn btn-success" href="{% url 'teachers:teacher_list' %}">Regresar</a>
+<a class= "btn btn-info" href="{% url 'teachers:teacher_update' object.id%}">Editar</a>
+<a class="btn btn-danger" href="{% url 'teachers:teacher_delete' object.id %}">Eliminar</a>
+
+{% endblock %}

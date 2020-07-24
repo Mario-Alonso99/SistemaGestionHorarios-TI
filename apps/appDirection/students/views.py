@@ -14,7 +14,18 @@ from tablib import Dataset
 from .resources import StudentResource
 from .models import Student
 
+#Lineas de importación de los requerimientos necesarios de registro de Administradores
+from django.contrib.auth.models import User
+from apps.appDirection.students.forms import RegistroForm
+
 # Create your views here.
+
+#Formulario de Registro de Administradores
+class RegistroUsuario(CreateView):
+    model = User
+    form_class = RegistroForm
+    template_name = 'students/registrar.html'
+    success_url = reverse_lazy('students:student_list')
 
 class StudentCreate(CreateView):
     model = Student
@@ -24,7 +35,7 @@ class StudentCreate(CreateView):
 
 class StudentList(ListView):
     queryset = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
-    template_name = 'students/students_list.html'
+    template_name = 'students/student_list.html'
     paginate_by = 30
 
 class StudentUpdate(UpdateView):
