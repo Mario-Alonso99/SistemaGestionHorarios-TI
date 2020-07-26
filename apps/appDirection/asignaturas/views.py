@@ -60,11 +60,11 @@ class AsignaturaReport(TemplateView):
         controlatorDatos = 4
         controlatorDatos +=1
         #Combinar Celdas
-        ws.merge_cells('B1:E1')
+        ws.merge_cells('B1:D1')
         #Cambiar el Ancho de las Columnas
-        ws.column_dimensions['B'].width = 20
-        ws.column_dimensions['C'].width = 40
-        ws.column_dimensions['D'].width = 35
+        ws.column_dimensions['B'].width = 40
+        ws.column_dimensions['C'].width = 45
+        ws.column_dimensions['D'].width = 30
       
 
         #Modificar el tamaño de las filas
@@ -89,15 +89,21 @@ class AsignaturaReport(TemplateView):
         #Diseño de resultados en el reporte y consulta de datos
         cont = 4
         for asignatura in asignaturas:
+
+
             ws.cell(row = cont, column = 2).value = asignatura.nombre
-            ws.cell(row = cont, column = 2).alignment = Alignment(horizontal="center", vertical="center")
+            
             ws.cell(row = cont, column = 2).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 3).value = asignatura.especialidad
+            
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 4).value = asignatura.cuatrimestre
+            ws.cell(row = cont, column = 2).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 4).font = Font(name='Arial', size=10)
+            
+
 
 
             cont +=1
