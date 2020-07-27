@@ -8,8 +8,8 @@
 		<tr>
 			<form method="get">
 				<p>
-					<th>Nombre: {{ filter.form.nombre }} </th>
 					<th>Matrícula: {{ filter.form.matricula }} </th>
+					<th>Nombre: {{ filter.form.first_name }} </th>
 					<th>Especialidad: {{ filter.form.especialidad }} </th>
 					<th>Cuatrimestre: {{ filter.form.cuatrimestre }} </th>
 					<th>Grupo: {{ filter.form.grupo }} </th>
@@ -34,7 +34,7 @@
 		{% for student in filter.qs %}
 		<tr>
 			<td>{{ student.matricula }}</td>
-			<td>{{ student.nombre }}</td>
+			<td>{{ student.first_name }} {{ student.last_name }}</td>
 			<td>{{ student.especialidad }}</td>
 			<td>{{ student.cuatrimestre }}</td>
 			<td>{{ student.grupo }}</td>

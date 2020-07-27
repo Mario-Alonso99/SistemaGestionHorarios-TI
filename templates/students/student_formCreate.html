@@ -13,49 +13,7 @@
 	{% csrf_token %}
 	{{ form.as_p }}
 	<hr>
-			<div class="form-group">
-				<label>Nombre:</label>
-				<input class="form-control" type="text" name="first_name">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small>
-			</div>
-	
-			<div class="form-group">
-				<label >Apellidos:</label>
-				<input class="form-control" type="text" name="last_name">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small>
-			</div>
-		
-
-			<div class="form-group">
-				<label >Nombre de usuario:</label>
-				<input class="form-control" type="text" name="username">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small><br>
-		 		<small style="color:red;">*150 carácteres como máximo. Únicamente letras, dígitos y @/./+/-/_</small>
-			</div>
-
-	
-			<div class="form-group">
-				<label >Correo electrónico:</label>
-				<input class="form-control" type="text" name="email">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small>
-			</div>
-
-			<div class="form-group">
-				<label >Contraseña:</label>
-				<input class="form-control" type="password" name="password1">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small><br>
-				<small style="color:red;">*Su contraseña no puede asemejarse tanto a su otra información personal.</small><br>
-				<small style="color:red;">*Su contraseña debe contener al menos 8 caracteres.</small><br>
-				<small style="color:red;">*Su contraseña no puede ser una clave utilizada comúnmente.</small><br>
-				<small style="color:red;">*Su contraseña no puede ser completamente numérica.</small><br>
-			</div>
-
-			<div class="form-group">
-				<label >Confirmar contraseña:</label>
-				<input class="form-control" type="password" name="password2">
-				<small style="color:red;">*Requerido. Este campo es obligatorio.</small>
-				<small style="color:red;">*Para verificar, introduzca la misma contraseña anterior.</small>
-			</div>
+			
 	<button class="btn btn-success" type="submit">Guardar</button>
 	<a class= "btn btn-danger" href="{% url 'students:student_list' %}">Cancelar</a>
 </form>
