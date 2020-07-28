@@ -1,10 +1,85 @@
 {% extends 'base/base.html' %}
 {% block content %}
 <a class= "btn btn-danger" href="{% url 'students:student_list' %}">Cancelar</a><br><br>
+<!--
 <form method="post">
 	{% csrf_token %}
 		{{ form.as_p }}
 		<button class="btn btn-success" type="submit">Guardar</button>
 		<a class= "btn btn-danger" href="{% url 'students:student_list' %}">Cancelar</a>
+</form>-->
+
+<form method="post">
+	{% csrf_token %}
+	<!--{{ form.as_p }}-->
+	<div class="form-group">
+		<label for="{{form.matricula.name}}"> {{ form.matricula.label }}</label>
+		{{ form.matricula }}
+		<small style="color:red;">*Requerido. Ingresa una matrícula.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.first_name.name}}"> {{ form.first_name.label }}</label>
+		{{ form.first_name }}
+		<small style="color:red;">*Requerido. Ingresa un nombre/s.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.last_name.name}}"> {{ form.last_name.label }}</label>
+		{{ form.last_name }}
+		<small style="color:red;">*Requerido. Ingresa los apellidos.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.especialidad.name}}"> {{ form.especialidad.label }}</label>
+		{{ form.especialidad }}
+		<small style="color:red;">*Requerido. Selecciona un elemento de la lista desplegable.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.cuatrimestre.name}}"> {{ form.cuatrimestre.label }}</label>
+		{{ form.cuatrimestre }}
+		<small style="color:red;">*Requerido. Selecciona un elemento de la lista desplegable.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.grupo.name}}"> {{ form.grupo.label }}</label>
+		{{ form.grupo }}
+		<small style="color:red;">*Requerido. Selecciona un elemento de la lista desplegable.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.username.name}}"> {{ form.username.label }}</label>
+		{{ form.username }}
+		<small style="color:red;">*Requerido. Ingresa un nombre de usuario.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.email.name}}"> {{ form.email.label }}</label>
+		{{ form.email }}
+		<small style="color:red;">*Requerido. Ingresa un correo electrónico.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.password.name}}"> {{ form.password.label }}</label>
+		{{ form.password }}
+		<small style="color:red;">*Requerido. Ingresa una contraseña.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.estatus.name}}"> {{ form.estatus.label }}</label>
+		{{ form.estatus }}
+		<small style="color:red;">*Requerido. Selecciona un elemento de la lista desplegable.</small>
+	</div>
+
+	<div class="form-group" hidden>
+		<label for="{{form.tipo.name}}"> {{ form.tipo.label }}</label>
+		{{ form.tipo }}
+	</div>
+	
+	<hr width=100%  align="center"  size=10   noshade="noshade">			
+	
+	<button class="btn btn-success" type="submit">Guardar</button>
+	<a class= "btn btn-danger" href="{% url 'students:student_list' %}">Cancelar</a>
 </form>
 {% endblock %}
