@@ -25,12 +25,12 @@ class StudentForm(forms.ModelForm):
 		
 		labels = {
 			#labels del Módelo creado
-			'matricula': 'Matrícula',
-			'especialidad': 'Especialidad',
-			'cuatrimestre': 'Cuatrimestre',
-			'grupo': 'Grupo',
-			'estatus': 'Estatus',
-			'tipo': 'Tipo',
+			'matricula': 'Matrícula:',
+			'especialidad': 'Especialidad:',
+			'cuatrimestre': 'Cuatrimestre:',
+			'grupo': 'Grupo:',
+			'estatus': 'Estatus:',
+			'tipo': 'Tipo:',
 			#labels del Módelo User de Django
 			'username': 'Nombre de usuario:',
 			'first_name': 'Nombre:',
