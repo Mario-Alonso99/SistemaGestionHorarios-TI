@@ -3,11 +3,11 @@ from django.views.generic import CreateView, ListView, DeleteView, UpdateView, D
 from django.urls import reverse_lazy
 
 from apps.appDirection.teachers.models import Teacher
-from apps.appDirection.teachers.forms import TeacherForm
+from apps.appDirection.teachers.forms import RegistroForm
 from apps.appDirection.teachers.filters import TeacherFilter
 
 from openpyxl import Workbook
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
 from tablib import Dataset
@@ -18,19 +18,19 @@ from .models import Teacher
 
 class TeacherCreate(CreateView):
     model = Teacher
-    form_class = TeacherForm
-    template_name = 'teachers/teacher_formCreate.html'
+    form_class = RegistroForm
+    template_name = 'teachers/registrar.html'
     success_url = reverse_lazy('teachers:teacher_list')
 
 class TeacherList(ListView):
-    queryset = Teacher.objects.order_by('grado_academico', 'tipo')
+    queryset = Teacher.objects.order_by('grado_academico', 'tjornada')
     template_name = 'teachers/teachers_list.html'
     paginate_by = 5
 
 class TeacherUpdate(UpdateView):
 	model = Teacher
-	form_class = TeacherForm
-	template_name = 'teachers/teacher_formCreate.html'
+	form_class = RegistroForm
+	template_name = 'teachers/registrar.html'
 	success_url = reverse_lazy('teachers:teacher_list')
 
 class TeacherDelete(DeleteView):
@@ -50,7 +50,7 @@ def search(request):
 class TeacherReport(TemplateView):
     def get(self, request, *args, **kwargs):
         teachers = Teacher.objects.all()
-        teachers = Teacher.objects.order_by('grado_academico','tipo', 'estatus')
+        teachers = Teacher.objects.order_by('grado_academico','tjornada', 'estatus')
 
         wb = Workbook()
         ws = wb.active
@@ -125,7 +125,7 @@ class TeacherReport(TemplateView):
             ws.cell(row = cont, column = 2).font = Font(name='Arial', size=10)
 
 
-            ws.cell(row = cont, column = 3).value = teacher.nombre
+            ws.cell(row = cont, column = 3).value = teacher.first_name
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 4).value = teacher.email
@@ -135,13 +135,15 @@ class TeacherReport(TemplateView):
             ws.cell(row = cont, column = 5).font = Font(name='Arial', size=10)
 
 
-            ws.cell(row = cont, column = 6).value = teacher.tipo
+            ws.cell(row = cont, column = 6).value = teacher.tjornada
            
             ws.cell(row = cont, column = 6).font = Font(name='Arial', size=10)
+
 
             ws.cell(row = cont, column = 7).value = teacher.numero_empleado
             
             ws.cell(row = cont, column = 7).font = Font(name='Arial', size=10)
+            
 
             ws.cell(row = cont, column = 8).value = teacher.estatus
             

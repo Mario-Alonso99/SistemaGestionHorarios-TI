@@ -17,9 +17,9 @@ TEACHER_CHOICES_ESTATUS = (
 #Creación del Modelo Students empleando el Modelo de User de Django
 class Teacher(User):
     matricula = models.TextField(max_length=15, verbose_name="Matrícula", null=False, blank=False)
-    grado_academico = models.TextField(max_length=200, verbose_name="Grado academico", default='')
+    grado_academico = models.TextField(max_length=200, verbose_name="Grado academico", default='', null=False,)
     tjornada = models.TextField(null=False, blank=False, choices=TEACHER_CHOICES_TJORNADA, default='AP')
-    numero_empleado = models.TextField(max_length=200, verbose_name="Número de empleado", default='')
+    numero_empleado = models.TextField(max_length=200, verbose_name="Número de empleado", default='', null=False)
     estatus = models.TextField(null=False, blank=False, choices=TEACHER_CHOICES_ESTATUS, default='Activo')
     tipo = models.TextField(null=False, blank=False, verbose_name="Tipo", max_length=20, default='Docente')
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")

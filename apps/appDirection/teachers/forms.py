@@ -1,7 +1,9 @@
 from django import forms
 from apps.appDirection.teachers.models import Teacher
 
-class TeacherForm(forms.ModelForm):
+from django.contrib.auth.forms import UserCreationForm
+
+class RegistroForm(UserCreationForm):
 	class Meta:
 		model = Teacher
 		fields = [
@@ -17,8 +19,7 @@ class TeacherForm(forms.ModelForm):
 			'first_name',
 			'last_name',
 			'email',
-			'password',	
-			
+				
 		]
 
 		labels = {
@@ -34,7 +35,6 @@ class TeacherForm(forms.ModelForm):
 			'first_name': 'Nombre:',
 			'last_name': 'Apellidos:',
 			'email': 'Correo Electrónico:',
-			'password': 'Contraseña:',
 
 		}
 
@@ -46,10 +46,9 @@ class TeacherForm(forms.ModelForm):
 			'estatus': forms.Select(attrs={'class':'form-control'}),
 			
 			#widgest del Módelo User de Django
-			'username': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'daniela.08', 'required': 'required'}),
+			'username': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'dani.08', 'required': 'required'}),
 			'first_name': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Daniela', 'required': 'required'}),
 			'last_name': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Muñoz Hernández', 'required': 'required'}),
 			'email': forms.EmailInput(attrs={'class':'form-control', 'placeholder': 'dan.08@gmail.com', 'required': 'required'}),
-			'password': forms.PasswordInput(attrs={'class':'form-control', 'placeholder': '************', 'required': 'required'}),
 		
 		}
