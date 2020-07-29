@@ -26,6 +26,7 @@ from django.urls import path, include
 from apps.appDirection.students.urls import studentpatterns
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
+from apps.appDirection.asignaturas.urls import asignaturapatterns
 
 
 
@@ -49,6 +50,10 @@ urlpatterns = [
     path('students/', include (studentpatterns)),
     path('places/', include (placepatterns)),
     path('teachers/', include (teacherpatterns)),
+    path('asignaturas/', include (asignaturapatterns)),
+
+
+
 
 
 
