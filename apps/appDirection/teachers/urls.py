@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 from apps.appDirection.teachers.views import TeacherCreate, TeacherList, TeacherUpdate, TeacherDelete, TeacherShow, search, TeacherReport
 from .views import importar 
 
