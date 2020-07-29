@@ -23,9 +23,10 @@ class TeacherCreate(CreateView):
     success_url = reverse_lazy('teachers:teacher_list')
 
 class TeacherList(ListView):
+    queryset = Teacher.objects.filter(tipo='Docente')
     queryset = Teacher.objects.order_by('grado_academico', 'tjornada')
     template_name = 'teachers/teachers_list.html'
-    paginate_by = 5
+    paginate_by = 8
 
 class TeacherUpdate(UpdateView):
 	model = Teacher
@@ -44,12 +45,15 @@ class TeacherShow(DetailView):
 
 def search(request):
     teacher_list = Teacher.objects.all()
+    teacher_list = Teacher.objects.filter(tipo='Docente')
+    teacher_list = Teacher.objects.order_by('grado_academico', 'tjornada')
     teacher_filter = TeacherFilter(request.GET, queryset=teacher_list)
     return render(request, 'teachers/teacher_search.html', {'filter': teacher_filter})
 
 class TeacherReport(TemplateView):
     def get(self, request, *args, **kwargs):
         teachers = Teacher.objects.all()
+        teachers= Teacher.objects.filter(tipo='Docente')
         teachers = Teacher.objects.order_by('grado_academico','tjornada', 'estatus')
 
         wb = Workbook()

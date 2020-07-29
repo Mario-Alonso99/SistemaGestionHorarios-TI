@@ -3,7 +3,8 @@
 {% block content %}
 <form method="post">
 	{% csrf_token %}
-	<h3>¿Desea eliminar el registro del profesor <strong>{{ object.nombre }}</strong> con Matrícula <strong>{{ object.matricula }}</strong>?</h3>	
+	<h3>¿Desea eliminar el registro del profesor <strong>{{ object.first_name }}{{ object.last_name }}</strong>, <br><br> con matrícula <strong>{{ object.matricula }}</strong>?</h3>	
+	<hr width=100%  align="center"  size=10   noshade="noshade">	
 	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
 	<a class= "btn btn-default" href="{% url 'teachers:teacher_list' %}">Cancelar</a>
 </form>

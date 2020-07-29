@@ -10,11 +10,11 @@
 		<tr>
 			<form method="get">
 				<p>
-					<th>Nombre: {{ filter.form.nombre }} </th>
+					<th>Nombre: {{ filter.form.first_name }} </th>
 					<th>Matrícula: {{ filter.form.matricula }} </th>
 					<th>Grado academico: {{ filter.form.grado_academico }} </th>
 					
-					<th>Tipo: {{ filter.form.tipo }} </th>
+					<th>Tipo: {{ filter.form.tjornada }} </th>
 					
 					<th><button class="btn btn-primary" type="submit">Buscar</button></th>
 				</p>
@@ -38,9 +38,9 @@
 		{% for teacher in filter.qs %}
 		<tr>
 			<td>{{ teacher.matricula }}</td>
-			<td>{{ teacher.nombre }}</td>
+			<td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
 			<td>{{ teacher.grado_academico }}</td>
-			<td>{{ teacher.tipo }}</td>
+			<td>{{ teacher.tjornada }}</td>
 			<td>{{ teacher.numero_empleado }}</td>	
 			<td>{{ teacher.estatus }}</td>	
 			<td>
