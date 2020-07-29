@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 
 #Importamos el Módelo de la Aplicación Students (models.py)
 from apps.appDirection.students.models import Student
+from django.db.models import Q
 
 #Importamos el Formulario de la Aplicación Students para el registro y actualización (forms.py)
 from apps.appDirection.students.forms import RegistroForm
@@ -32,6 +33,7 @@ class StudentCreate(CreateView):
 
 #Clase de Listado de Registros
 class StudentList(ListView):
+    queryset = Student.objects.filter(tipo='Estudiante')
     queryset = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
     template_name = 'students/student_list.html'
     paginate_by = 30
@@ -57,6 +59,8 @@ class StudentShow(DetailView):
 #Clase de Busqueda de Registros
 def search(request):
     student_list = Student.objects.all()
+    student_list = Student.objects.filter(tipo='Estudiante')
+    student_list = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
     student_filter = StudentFilter(request.GET, queryset=student_list)
     return render(request, 'students/student_search.html', {'filter': student_filter})
 
@@ -64,6 +68,7 @@ def search(request):
 class StudentReport(TemplateView):
     def get(self, request, *args, **kwargs):
         students = Student.objects.all()
+        students = Student.objects.filter(tipo='Estudiante')
         students = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
 
         wb = Workbook()
