@@ -42,6 +42,13 @@ INSTALLED_APPS = [
     'apps.appDirection.places',
     'apps.appDirection.teachers',
     'apps.appDirection.users',
+    'apps.appDirection.asignaturas',
+
+
+    
+
+
+
 
 
 

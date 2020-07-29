@@ -5,8 +5,8 @@ from django.urls import reverse_lazy
 #Importamos el Módelo de la Aplicación Students (models.py)
 from apps.appDirection.students.models import Student
 
-#Importamos el Formulario de la Aplicación Students (forms.py)
-from apps.appDirection.students.forms import StudentForm
+#Importamos el Formulario de la Aplicación Students para el registro y actualización (forms.py)
+from apps.appDirection.students.forms import RegistroForm
 
 #Importamos el filtro de la Aplicación Students (filters.py)
 from apps.appDirection.students.filters import StudentFilter
@@ -26,8 +26,8 @@ from .models import Student
 #Clase de Creación de Registro
 class StudentCreate(CreateView):
     model = Student
-    form_class = StudentForm
-    template_name = 'students/student_formCreate.html'
+    form_class = RegistroForm
+    template_name = 'students/registrar.html'
     success_url = reverse_lazy('students:student_list')
 
 #Clase de Listado de Registros
@@ -39,8 +39,8 @@ class StudentList(ListView):
 #Clase de Actualización de Registros
 class StudentUpdate(UpdateView):
 	model = Student
-	form_class = StudentForm
-	template_name = 'students/student_formCreate.html'
+	form_class = RegistroForm
+	template_name = 'students/registrar.html'
 	success_url = reverse_lazy('students:student_list')
 
 #Clase de Eliminación de Registros
