@@ -2,62 +2,65 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView, TemplateView
 from django.urls import reverse_lazy
 
+#Importamos el Módelo de la Aplicación Students (models.py)
 from apps.appDirection.students.models import Student
+
+#Importamos el Formulario de la Aplicación Students (forms.py)
 from apps.appDirection.students.forms import StudentForm
+
+#Importamos el filtro de la Aplicación Students (filters.py)
 from apps.appDirection.students.filters import StudentFilter
 
+#Importamos las librerias para la generación de reportes Excel (.xslx)
 from openpyxl import Workbook
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
+#Importamos las librerias para la importación de datos
 from tablib import Dataset
 from .resources import StudentResource
 from .models import Student
 
-#Lineas de importación de los requerimientos necesarios de registro de Administradores
-from django.contrib.auth.models import User
-from apps.appDirection.students.forms import RegistroForm
-
 # Create your views here.
 
-#Formulario de Registro de Administradores
-class RegistroUsuario(CreateView):
-    model = User
-    form_class = RegistroForm
-    template_name = 'students/registrar.html'
-    success_url = reverse_lazy('students:student_list')
-
+#Clase de Creación de Registro
 class StudentCreate(CreateView):
     model = Student
     form_class = StudentForm
     template_name = 'students/student_formCreate.html'
     success_url = reverse_lazy('students:student_list')
 
+#Clase de Listado de Registros
 class StudentList(ListView):
     queryset = Student.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
     template_name = 'students/student_list.html'
     paginate_by = 30
 
+#Clase de Actualización de Registros
 class StudentUpdate(UpdateView):
 	model = Student
 	form_class = StudentForm
 	template_name = 'students/student_formCreate.html'
 	success_url = reverse_lazy('students:student_list')
 
+#Clase de Eliminación de Registros
 class StudentDelete(DeleteView):
 	model = Student
 	template_name = 'students/student_delete.html'
 	success_url = reverse_lazy('students:student_list')
 
+#Clase de Detalles de Registros
 class StudentShow(DetailView):
     model = Student
     template_name = 'students/student_show.html'
 
+#Clase de Busqueda de Registros
 def search(request):
     student_list = Student.objects.all()
     student_filter = StudentFilter(request.GET, queryset=student_list)
     return render(request, 'students/student_search.html', {'filter': student_filter})
 
+#Clase de Generación de Reportes En Excel
 class StudentReport(TemplateView):
     def get(self, request, *args, **kwargs):
         students = Student.objects.all()
@@ -131,7 +134,7 @@ class StudentReport(TemplateView):
             ws.cell(row = cont, column = 2).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 2).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 3).value = student.nombre
+            ws.cell(row = cont, column = 3).value = student.first_name
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 4).value = student.especialidad
@@ -153,14 +156,14 @@ class StudentReport(TemplateView):
 
             cont +=1
 
-        name_archivo = "ReporteEstudiantesInscritos.xlsx"
+        name_archivo = "Reporte Estudiantes Inscritos.xlsx"
         response = HttpResponse(content_type = "application/ms-excel")
         content = "attachment; filename = {0}".format(name_archivo)
         response['Content-Disposition'] = content
         wb.save(response)
         return response
 
-#Agregando codigo para la carga masiva
+#Clase de carga masiva
 def importar(request):  
     if request.method == 'POST':  
         student_resource = StudentResource()  

@@ -19,7 +19,7 @@
 			{% for student in object_list %}
 			<tr>
 				<td>{{ student.matricula }}</td>
-				<td>{{ student.nombre }}</td>
+				<td>{{ student.first_name }} {{ student.last_name }}</td>
 				<td>{{ student.especialidad }}</td>
 				<td>{{ student.cuatrimestre }}</td>
 				<td>{{ student.grupo }}</td>
