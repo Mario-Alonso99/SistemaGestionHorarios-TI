@@ -100,7 +100,7 @@ class AsignaturaReport(TemplateView):
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 4).value = asignatura.cuatrimestre
-            ws.cell(row = cont, column = 2).alignment = Alignment(horizontal="center", vertical="center")
+            ws.cell(row = cont, column = 4).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 4).font = Font(name='Arial', size=10)
             
 
