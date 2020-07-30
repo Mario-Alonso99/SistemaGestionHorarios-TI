@@ -39,3 +39,9 @@ Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20
 
 
 Daniela Muñoz Hernández - > Gestión de Asignaturas (Gestión Finalizada -> 24/07/2020)
+
+
+Mario Alberto Alonso Alvarado - > Gestión de Alumnos, Login y Aulas/Laboratorios (Gestiones Finalizadas), Aplicando el modelo User de Django (30/07/2020)
+Mario Alberto Alonso Alvarado - > Autentificación del Login a traves de las Gestiones realizadas (30/07/2020)
+
+Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del Módulo de Dirección (30/07/2020 4:00 p.m)

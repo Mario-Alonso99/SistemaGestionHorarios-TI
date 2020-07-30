@@ -84,15 +84,17 @@ class StudentReport(TemplateView):
         controlatorDatos = 4
         controlatorDatos +=1
         #Combinar Celdas
-        ws.merge_cells('B1:H1')
+        ws.merge_cells('B1:J1')
         #Cambiar el Ancho de las Columnas
-        ws.column_dimensions['B'].width = 20
-        ws.column_dimensions['C'].width = 35
-        ws.column_dimensions['D'].width = 45
-        ws.column_dimensions['E'].width = 25
+        ws.column_dimensions['B'].width = 25
+        ws.column_dimensions['C'].width = 30
+        ws.column_dimensions['D'].width = 30
+        ws.column_dimensions['E'].width = 50
         ws.column_dimensions['F'].width = 20
-        ws.column_dimensions['G'].width = 45
-        ws.column_dimensions['H'].width = 20
+        ws.column_dimensions['G'].width = 20
+        ws.column_dimensions['H'].width = 35
+        ws.column_dimensions['I'].width = 25
+        ws.column_dimensions['J'].width = 30
 
         #Modificar el tamaño de las filas
         ws.row_dimensions[1].height = 25
@@ -110,27 +112,37 @@ class StudentReport(TemplateView):
         ws['D3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['D3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['D3'].font = Font(name='Arial', size=14, bold= True)
-        ws['D3']= 'Especialidad'
+        ws['D3']= 'Apellidos'
 
         ws['E3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['E3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['E3'].font = Font(name='Arial', size=14, bold= True)
-        ws['E3']= 'Cuatrimestre'
+        ws['E3']= 'Especialidad'
 
         ws['F3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['F3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['F3'].font = Font(name='Arial', size=14, bold= True)
-        ws['F3'] = 'Grupo'
+        ws['F3']= 'Cuatrimestre'
 
         ws['G3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['G3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['G3'].font = Font(name='Arial', size=14, bold= True)
-        ws['G3']= 'Email'
+        ws['G3'] = 'Grupo'
 
         ws['H3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['H3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['H3'].font = Font(name='Arial', size=14, bold= True)
-        ws['H3']= 'Estatus'
+        ws['H3']= 'Email'
+
+        ws['I3'].alignment = Alignment(horizontal="center", vertical="center")
+        ws['I3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
+        ws['I3'].font = Font(name='Arial', size=14, bold= True)
+        ws['I3']= 'Estatus'
+
+        ws['J3'].alignment = Alignment(horizontal="center", vertical="center")
+        ws['J3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
+        ws['J3'].font = Font(name='Arial', size=14, bold= True)
+        ws['J3']= 'Nombre de usuario'
 
         #Diseño de resultados en el reporte y consulta de datos
         cont = 4
@@ -142,22 +154,28 @@ class StudentReport(TemplateView):
             ws.cell(row = cont, column = 3).value = student.first_name
             ws.cell(row = cont, column = 3).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 4).value = student.especialidad
+            ws.cell(row = cont, column = 4).value = student.last_name
             ws.cell(row = cont, column = 4).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 5).value = student.cuatrimestre
-            ws.cell(row = cont, column = 5).alignment = Alignment(horizontal="center", vertical="center")
+            ws.cell(row = cont, column = 5).value = student.especialidad
             ws.cell(row = cont, column = 5).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 6).value = student.grupo
+            ws.cell(row = cont, column = 6).value = student.cuatrimestre
             ws.cell(row = cont, column = 6).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 6).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 7).value = student.email
+            ws.cell(row = cont, column = 7).value = student.grupo
+            ws.cell(row = cont, column = 7).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 7).font = Font(name='Arial', size=10)
 
-            ws.cell(row = cont, column = 8).value = student.estatus
+            ws.cell(row = cont, column = 8).value = student.email
             ws.cell(row = cont, column = 8).font = Font(name='Arial', size=10)
+
+            ws.cell(row = cont, column = 9).value = student.estatus
+            ws.cell(row = cont, column = 9).font = Font(name='Arial', size=10)
+
+            ws.cell(row = cont, column = 10).value = student.username
+            ws.cell(row = cont, column = 10).font = Font(name='Arial', size=10)
 
             cont +=1
 
