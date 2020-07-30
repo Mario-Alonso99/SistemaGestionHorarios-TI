@@ -72,11 +72,11 @@ class AdministratorReport(TemplateView):
         ws.merge_cells('B1:G1')
         #Cambiar el Ancho de las Columnas
         ws.column_dimensions['B'].width = 20
-        ws.column_dimensions['C'].width = 30
+        ws.column_dimensions['C'].width = 25
         ws.column_dimensions['D'].width = 30
         ws.column_dimensions['E'].width = 30
-        ws.column_dimensions['F'].width = 25
-        ws.column_dimensions['G'].width = 35
+        ws.column_dimensions['F'].width = 35
+        ws.column_dimensions['G'].width = 25
 
 
         #Modificar el tamaño de las filas
@@ -131,10 +131,12 @@ class AdministratorReport(TemplateView):
 
 
             ws.cell(row = cont, column = 6).value = administrator.numero_empleado
+            ws.cell(row = cont, column = 6).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 6).font = Font(name='Arial', size=10)
 
 
             ws.cell(row = cont, column = 7).value = administrator.estatus
+            ws.cell(row = cont, column = 7).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 7).font = Font(name='Arial', size=10)
             
             cont +=1
