@@ -74,10 +74,10 @@ class TeacherReport(TemplateView):
         ws.column_dimensions['B'].width = 20
         ws.column_dimensions['C'].width = 30
         ws.column_dimensions['D'].width = 30
-        ws.column_dimensions['E'].width = 30
-        ws.column_dimensions['F'].width = 25
-        ws.column_dimensions['G'].width = 35
-        ws.column_dimensions['H'].width = 30
+        ws.column_dimensions['E'].width = 35
+        ws.column_dimensions['F'].width = 30
+        ws.column_dimensions['G'].width = 25
+        ws.column_dimensions['H'].width = 35
         ws.column_dimensions['I'].width = 30
         ws.column_dimensions['J'].width = 30
 
@@ -109,7 +109,7 @@ class TeacherReport(TemplateView):
         ws['F3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['F3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
         ws['F3'].font = Font(name='Arial', size=14, bold= True)
-        ws['F3']= 'Grado academico'
+        ws['F3']= 'Grado académico'
 
         ws['G3'].alignment = Alignment(horizontal="center", vertical="center")
         ws['G3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
