@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<a class= "btn btn-danger" href="{% url 'administrators:administrator_list' %}">Cancelar</a><br><br>
+<form method="post">
+	{% csrf_token %}
+	
+	<div class="form-group">
+		<label >Nombre de usuario:</label>
+		{{ form.username }}
+		<small style="color:red;">*Requerido. Ingresa un nombre de usuario.</small>
+	</div>
+
+	<div class="form-group">
+		<label>Matrícula:</label>
+		{{ form.matricula }}
+		<small style="color:red;">*Requerido. Ingresa una matrícula.</small>
+	</div>
+		
+	<div class="form-group">
+		<label>Nombre:</label>
+		{{ form.first_name }}
+		<small style="color:red;">*Requerido. Ingresa un nombre/s.</small>
+	</div>
+	
+	<div class="form-group">
+		<label >Apellidos:</label>
+		{{ form.last_name }}
+		<small style="color:red;">*Requerido. Ingresa los apellidos.</small>
+	</div>
+	
+    <div class="form-group">
+		<label >Número de empleado:</label>
+		{{ form.numero_empleado }}
+		<small style="color:red;">*Requerido. Ingresa tu número correspondiente de empleado.</small>
+	</div>
+
+
+	<div class="form-group">
+		<label >Correo electrónico:</label>
+		{{ form.email }}
+		<small style="color:red;">*Requerido. Ingresa un correo electrónico.</small>
+	</div>
+		
+	<div class="form-group">
+		<label >Contraseña:</label>
+		<input class="form-control" type="password" name="password1">
+		<small style="color:red;">*Requerido. Ingresa una contraseña.</small>
+	</div>
+		
+	<div class="form-group">
+		<label >Confirmar contraseña:</label>
+		<input class="form-control" type="password" name="password2">
+		<small style="color:red;">*Requerido. Ingresa la contraseña ingresa anteriormenrte.</small>
+	</div>
+
+	<div class="form-group">
+		<label for="{{form.estatus.name}}"> {{ form.estatus.label }}</label>
+		{{ form.estatus }}
+		<small style="color:red;">*Requerido. Selecciona un elemento de la lista desplegable.</small>
+	</div>
+
+	<div class="form-group" hidden>
+		<label for="{{form.tipo.name}}"> {{ form.tipo.label }}</label>
+		{{ form.tipo }}
+	</div>
+
+	<hr width=100%  align="center"  size=10   noshade="noshade">			
+	
+	<button class="btn btn-success" type="submit">Guardar</button>
+	<a class= "btn btn-danger" href="{% url 'administrators:administrator_list' %}">Cancelar</a>
+</form>
+{% endblock %}
