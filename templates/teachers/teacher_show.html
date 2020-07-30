@@ -1,14 +1,14 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-
-<p><strong>Matrícula: </strong>{{ object.matricula }} </p>
-<p><strong>Nombre: </strong>{{ object.nombre }} </p>
-<p><strong>Email: </strong>{{ object.email }} </p>
-<p><strong>Grado academico: </strong>{{ object.grado_academico }} </p>
-<p><strong>Tipo: </strong>{{ object.tipo }} </p>
-<p><strong>Número de empleado: </strong>{{ object.numero_empleado }} </p>
-<p><strong>Estatus: </strong>{{ object.estatus }} </p>
+<a class= "btn btn-danger" href="{% url 'teachers:teacher_list' %}">Cancelar</a><br>
+    <center><h2>Datos del docente: <strong>{{ object.first_name }} {{ object.last_name }}</strong><br><br> con matrícula <strong>{{ object.matricula }}</strong></h2></center>
+    <hr width=100%  align="center"  size=10   noshade="noshade">
+    <h3><strong>Email: </strong>{{ object.email }} </h3>
+    <h3><strong>Grado académico: </strong>{{ object.grado_academico }} </h3>
+    <h3><strong>Tipo: </strong>{{ object.tjornada }} </h3>
+    <h3><strong>Número de empleado: </strong>{{ object.numero_empleado }} </h3>
+    <h3><strong>Estatus: </strong>{{ object.estatus }} </h3>
 
 
 <a class= "btn btn-success" href="{% url 'teachers:teacher_list' %}">Regresar</a>
