@@ -18,30 +18,18 @@ Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20
 
 Mario Alberto Alonso Alvarado - > Gestión de Aulas/Laboratorios -> Rama MD-GestionAulas/Laboratorios (Gestión Finalizada -> 21/07/2020)
 
+Daniela Muñoz Hernández       - > Gestión de Docentes(Gestión Finalizada -> 21/07/2020)
+
 Mario Alberto Alonso Alvarado - > Primer Avance del Inicio de Sesión (Módulo Dirección)
 
 Mario Alberto Alonso Alvarado - > Gestión del Login de Inicio de Sesión para Director (Primera Versión, Aun suceptible a cambios - > 22/07/2020)
-Mario Alberto Alonso Alvarado, Realice cambios de diseño y estructuración de scripts hacia las Ramas de Alumnos y Laboratorios.
-
-
-
-Daniela Muñoz Hernández       - > Gestión de Docentes(Gestión Finalizada -> 21/07/2020) 
-Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20/07/2020)
-
-
-
-
-
-
-
-
-
-
+Mario Alberto Alonso Alvarado, Realice cambios de diseño y estructuración de scripts hacia las Ramas de Alumnos y Laboratorios. 
 
 Daniela Muñoz Hernández - > Gestión de Asignaturas (Gestión Finalizada -> 24/07/2020)
 
+Daniela Muñoz Hernández       - > Actualizaciones a la gestión de docentes (30/07/2020)
 
 Mario Alberto Alonso Alvarado - > Gestión de Alumnos, Login y Aulas/Laboratorios (Gestiones Finalizadas), Aplicando el modelo User de Django (30/07/2020)
 Mario Alberto Alonso Alvarado - > Autentificación del Login a traves de las Gestiones realizadas (30/07/2020)
 
-Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del Módulo de Dirección (30/07/2020 4:00 p.m)
+Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del Módulo de Dirección (30/07/2020 4:00 p.m) 
