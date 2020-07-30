@@ -24,7 +24,7 @@ class RegistroForm(UserCreationForm):
 			#labels del Módelo creado
 			'matricula': 'Matrícula',
 			'numero_empleado': 'Número de empleado',
-			'estatus' : 'Estatus',
+			'estatus' : 'Estatus:',
 			
 			#labels del Módelo User de Django
 			'username': 'Nombre de usuario:',

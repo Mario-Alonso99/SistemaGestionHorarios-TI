@@ -69,7 +69,7 @@ class AdministratorReport(TemplateView):
         controlatorDatos = 4
         controlatorDatos +=1
         #Combinar Celdas
-        ws.merge_cells('B1:G1')
+        ws.merge_cells('B1:H1')
         #Cambiar el Ancho de las Columnas
         ws.column_dimensions['B'].width = 20
         ws.column_dimensions['C'].width = 25
@@ -77,6 +77,7 @@ class AdministratorReport(TemplateView):
         ws.column_dimensions['E'].width = 30
         ws.column_dimensions['F'].width = 35
         ws.column_dimensions['G'].width = 25
+        ws.column_dimensions['H'].width = 30
 
 
         #Modificar el tamaño de las filas
@@ -112,6 +113,11 @@ class AdministratorReport(TemplateView):
         ws['G3'].font = Font(name='Arial', size=14, bold= True)
         ws['G3']= 'Estatus'
 
+        ws['H3'].alignment = Alignment(horizontal="center", vertical="center")
+        ws['H3'].border = Border(left= Side(border_style = "thin"), right = Side(border_style = "thin"), top = Side(border_style="thin"), bottom = Side(border_style="thin"))
+        ws['H3'].font = Font(name='Arial', size=14, bold= True)
+        ws['H3']= 'Nombre de usuario'
+
         #Diseño de resultados en el reporte y consulta de datos
         cont = 4
         for administrator in administrators:
@@ -138,6 +144,9 @@ class AdministratorReport(TemplateView):
             ws.cell(row = cont, column = 7).value = administrator.estatus
             ws.cell(row = cont, column = 7).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 7).font = Font(name='Arial', size=10)
+
+            ws.cell(row = cont, column = 8).value = administrator.username
+            ws.cell(row = cont, column = 8).font = Font(name='Arial', size=10)
             
             cont +=1
 
