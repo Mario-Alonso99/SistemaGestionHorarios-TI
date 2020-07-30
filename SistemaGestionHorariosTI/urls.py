@@ -20,26 +20,18 @@ from django.urls import path, include
 
 
 
-
-
 #Importación de los recursos de las Apps (Urls)
 from apps.appDirection.students.urls import studentpatterns
 from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
 from apps.appDirection.asignaturas.urls import asignaturapatterns
-
-
-
+from apps.appDirection.administrators.urls import administratorpatterns
 
 
 
 #Importación de los Recrusos para Login
 from apps.appDirection.users.views import Login, logoutUser
 from django.contrib.auth.decorators import login_required
-
-
-
-
 
 
 
@@ -51,14 +43,7 @@ urlpatterns = [
     path('places/', include (placepatterns)),
     path('teachers/', include (teacherpatterns)),
     path('asignaturas/', include (asignaturapatterns)),
-
-
-
-
-
-
-
-
+    path('administrators/', include (administratorpatterns)),
 
 
 

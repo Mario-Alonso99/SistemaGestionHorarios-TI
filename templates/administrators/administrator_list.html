@@ -1,6 +1,5 @@
 {% extends 'base/base.html' %}
 {% block content %}
-<a class="btn btn-success" href="{% url 'teachers:report' %}">Descargar Excel</a><br>
 <h3>Bienvenido/a Director: <strong>{{ user.first_name }} {{ user.last_name }}</strong></h3>
 <hr width=100%  align="center"  size=10   noshade="noshade">
 <table class="table table-bordered table-striped table-hover">
@@ -8,8 +7,6 @@
 		<tr>
 			<th>Matrícula</th>
 			<th>Nombre</th>
-			<th>Grado académico</th>
-			<th>Tipo</th>
 			<th>Número de empleado</th>
 			<th>Estatus</th>
 			<th>Acciones</th>
@@ -17,26 +14,24 @@
 	</thead>
 	<tbody>
 		{% if object_list %}
-		{% for teacher in object_list %}
+		{% for administrator in object_list %}
 		<tr>
-			<td>{{ teacher.matricula }}</td>
-			<td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
-			<td>{{ teacher.grado_academico }}</td>
-			<td>{{ teacher.tjornada }}</td>
-			<td>{{ teacher.numero_empleado }}</td>
-			<td>{{ teacher.estatus }}</td>
+			<td>{{ administrator.matricula }}</td>
+			<td>{{ administrator.first_name }} {{ administrator.last_name }}</td>
+			<td>{{ administrator.numero_empleado }}</td>
+			<td>{{ administrator.estatus }}</td>
 
 			<td>
-				<a class="btn btn-success" href="{% url 'teachers:teacher_show' teacher.id %}">Ver</a>
-				<a class="btn btn-info" href="{% url 'teachers:teacher_update' teacher.id %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'teachers:teacher_delete' teacher.id %}">Eliminar</a>
+				<a class="btn btn-success" href="{% url 'administrators:administrator_show' administrator.id %}">Ver</a>
+				<a class="btn btn-info" href="{% url 'administrators:administrator_update' administrator.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'administrators:administrator_delete' administrator.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
 		
 		{% else %}
 			<div class="alert alert-danger" role="alert">
-				AVISO: No Hay Registros de docentes. <a href="{% url 'teachers:teacher_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
+				AVISO: No Hay Registros de administradores <a href="{% url 'administrators:administrator_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
 			</div>
 		{% endif %}
 	</tbody>
