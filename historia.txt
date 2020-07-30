@@ -22,4 +22,5 @@ Mario Alberto Alonso Alvarado - > Gestión de Alumnos (Gestión Finalizada -> 20
 
 
 
-Daniela Muñoz Hernández       - > Gestión de Docentes(Gestión Finalizada -> 21/07/2020) 
+Daniela Muñoz Hernández       - > Gestión de Docentes(Gestión Finalizada -> 21/07/2020)
+Daniela Muñoz Hernández       - > Actualizaciones a la gestión de docentes (30/07/2020) 
