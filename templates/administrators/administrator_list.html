@@ -18,14 +18,14 @@
 		{% for administrator in object_list %}
 		<tr>
 			<td>{{ administrator.matricula }}</td>
-			<td>{{ administrator.first_name }} {{ teacher.last_name }}</td>
+			<td>{{ administrator.first_name }} {{ administrator.last_name }}</td>
 			<td>{{ administrator.numero_empleado }}</td>
 			<td>{{ administrator.estatus }}</td>
 
 			<td>
-				<a class="btn btn-success" href="{% url 'administrators:administrator_show' teacher.id %}">Ver</a>
-				<a class="btn btn-info" href="{% url 'administrators:administrator_update' teacher.id %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'administrators:administrator_delete' teacher.id %}">Eliminar</a>
+				<a class="btn btn-success" href="{% url 'administrators:administrator_show' administrator.id %}">Ver</a>
+				<a class="btn btn-info" href="{% url 'administrators:administrator_update' administrator.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'administrators:administrator_delete' administrator.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

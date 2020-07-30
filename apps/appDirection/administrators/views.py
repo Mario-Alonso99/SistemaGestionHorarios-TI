@@ -25,7 +25,7 @@ class AdministratorCreate(CreateView):
 class AdministratorList(ListView):
     queryset = Administrator.objects.filter(tipo='Administrator')
     queryset = Administrator.objects.order_by('estatus')
-    template_name = 'administrators/administrators_list.html'
+    template_name = 'administrators/administrator_list.html'
     paginate_by = 5
 
 class AdministratorUpdate(UpdateView):
