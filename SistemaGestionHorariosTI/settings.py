@@ -37,7 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.appDirection.students',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    'apps.appDirection.administrators',
 
     #Linea para importar datos
     'import_export',
