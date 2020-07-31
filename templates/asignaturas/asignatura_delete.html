@@ -2,7 +2,7 @@
 {% block content %}
 <form method="post">
 	{% csrf_token %}
-		<h2>¿Desea eliminar la asignatura de <strong>{{ object.nombre }}</strong> de la especialidad de <strong>{{ object.especialidad }}</strong>?</h2>
+		<h2>¿Desea eliminar la asignatura de <strong>{{ object.nombre }},</strong> de la especialidad de <strong>{{ object.especialidad }}</strong>?</h2>
 		<hr width=100%  align="center"  size=10   noshade="noshade">		
 		<button class="btn btn-danger" type="submit">Sí, eliminar</button>
 		<a class= "btn btn-default" href="{% url 'asignaturas:asignatura_list' %}">Cancelar</a>

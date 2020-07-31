@@ -11,5 +11,5 @@ teacherpatterns = ([
     path('show/<int:pk>/', login_required(TeacherShow.as_view()), name='teacher_show'),
     path('search/', login_required(search), name='teacher_search'),
     path('report/', login_required(TeacherReport.as_view()), name='report'),
-    path('import/', login_required(importar), name="teacher_import")
+    path('import/', login_required(importar), name='teacher_import')
 ], 'teachers')

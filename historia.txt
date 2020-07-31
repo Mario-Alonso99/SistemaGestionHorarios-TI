@@ -35,3 +35,82 @@ Mario Alberto Alonso Alvarado - > Gestión de Alumnos, Login y Aulas/Laboratorio
 Mario Alberto Alonso Alvarado - > Autentificación del Login a traves de las Gestiones realizadas (30/07/2020)
 
 Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del Módulo de Dirección (30/07/2020 4:00 p.m) 
+
+
+----REVISIÓN DE MÓDULO DE DIRECCIÓN ---- 30/07/2020
+
+-Gestión Alumnos
+    -Registro (100%)
+    -Consulta Inicial (100%)
+    -Reporte R1 (100%)
+    -Detalles-Show (100%)
+    -Carga Masiva (100%)
+    -Paginación (100%)
+    -ORDEN (HAY UN DETALLE CON EL CUATRIMESTRE)
+    -Edición de Registros (100%)
+    -Eliminación (100%)
+    -Busqueda (100%)
+    -Autentificación de Usuario, Muestra el Nombre (100%)
+    -Reporte R2 (100%)
+    -Encriptación de contraseñas (registro y actualización) (100%)
+
+-Gestión Docentes
+    -Registro (100%)
+    -Consulta Inicial (100%)
+    -Reporte R1 (100%)
+    -Detalles-Show (100%)
+    -Carga Masiva (100%)
+    -Paginación (100%)
+    -Orden (100%)
+    -Edición de Registros (100%)
+    -Eliminación (100%)
+    -Busqueda (100%)
+    -Autentificación de Usuario, Muestra el Nombre (100%)
+    -Reporte R2 (100%)
+    -Encriptación de contraseñas (registro y actualización) (100%)
+
+-GestiónAulas/Laboratorios
+    -Registro (80%)
+    -Consulta Inicial (100%)
+    -Reporte R1 (100%)
+    -Detalles-Show (100%)
+    -Paginación (100%)
+    -Orden (100%)
+    -Edición de Registros (100%)
+    -Eliminación (100%)
+    -Busqueda (100%)
+    -Autentificación de Usuario, Muestra el Nombre (100%)
+    -Reporte R2 (100%)
+
+-Gestión Administradores
+    -Registro (100%)
+    -Consulta Inicial (100%)
+    -Reporte R1 (100%)
+    -Detalles-Show (100%)
+    -Paginación (100%)
+    -Orden (100%)
+    -Edición de Registros (100%)
+    -Eliminación (100%)
+    -Busqueda (100%)
+    -Autentificación de Usuario, Muestra el Nombre (100%)
+    -Reporte R2 (100%)
+    -Encriptación de contraseñas (registro y actualización) (100%)
+
+-Gestión Asignaturas
+    -Registro (100%)
+    -Consulta Inicial (100%)
+    -Reporte R1 (100%)
+    -Detalles-Show (100%)
+    -Paginación (100%)
+    -Orden (100%)
+    -Edición de Registros (100%)
+    -Eliminación (100%)
+    -Busqueda (100%)
+    -Autentificación de Usuario, Muestra el Nombre (100%)
+    -Reporte R2 (100%) Mas grande la celda de Nombre
+
+-Gestion Login
+    -Protección de URLs(100%)
+    -Autentificación (100%)
+    -Bloqueo de accesos que no esten registrados (100%)
+    -Desencriptación para autentificación de contraseñas (100%)

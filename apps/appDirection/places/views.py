@@ -39,6 +39,7 @@ class PlaceShow(DetailView):
 
 def search(request):
     place_list = Place.objects.all()
+    place_list = Place.objects.order_by('tipo', 'ubicacion', 'encargado')
     place_filter = PlaceFilter(request.GET, queryset=place_list)
     return render(request, 'places/place_search.html', {'filter': place_filter})
 
@@ -94,7 +95,6 @@ class PlaceReport(TemplateView):
         cont = 4
         for place in places:
             ws.cell(row = cont, column = 2).value = place.tipo
-            ws.cell(row = cont, column = 2).alignment = Alignment(horizontal="center", vertical="center")
             ws.cell(row = cont, column = 2).font = Font(name='Arial', size=10)
 
             ws.cell(row = cont, column = 3).value = place.encargado

@@ -30,7 +30,7 @@ class Place(models.Model):
     nombre = models.TextField(max_length=200, verbose_name="Nombre", null=False, blank=False)
     tipo = models.TextField(null=False, blank=False, choices=PLACE_CHOICES_TIPO, default='Aula')
     encargado = models.TextField(null=False, blank=False, choices=PLACE_CHOICES_ENCARGADO, default='Julia Gabriela Nieva Paredes')
-    ubicacion = models.TextField(null=False, blank=True, choices=PLACE_CHOICES_UBICACION, default='Edificio F Planta Baja')
+    ubicacion = models.TextField(null=False, blank=True, choices=PLACE_CHOICES_UBICACION, default='Edificio P Planta Baja')
 
     class Meta:
         verbose_name = "Lugar"

@@ -62,7 +62,7 @@ class AsignaturaReport(TemplateView):
         #Combinar Celdas
         ws.merge_cells('B1:D1')
         #Cambiar el Ancho de las Columnas
-        ws.column_dimensions['B'].width = 40
+        ws.column_dimensions['B'].width = 50
         ws.column_dimensions['C'].width = 45
         ws.column_dimensions['D'].width = 30
       
