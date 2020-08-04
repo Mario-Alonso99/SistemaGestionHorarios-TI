@@ -26,7 +26,7 @@ from apps.appDirection.places.urls import placepatterns
 from apps.appDirection.teachers.urls import teacherpatterns
 from apps.appDirection.asignaturas.urls import asignaturapatterns
 from apps.appDirection.administrators.urls import administratorpatterns
-
+from apps.appAdministrator.horarios.urls import horariospatterns
 
 
 #Importación de los Recrusos para Login
@@ -44,7 +44,7 @@ urlpatterns = [
     path('teachers/', include (teacherpatterns)),
     path('asignaturas/', include (asignaturapatterns)),
     path('administrators/', include (administratorpatterns)),
-
+    path('horarios/', include (horariospatterns)),
 
 
     #Patterns de los Inicio de Sesión
