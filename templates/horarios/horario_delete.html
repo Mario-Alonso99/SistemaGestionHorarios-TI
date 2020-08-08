@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<h2>¿Desea eliminar el registro del Horario del <strong>"{{ object.cuatrimestre }}" -°{{ object.grupo }}</strong>,<br><br> de la Especialidad <strong>{{ object.especialidad }}</strong>?</h2>
+	<hr width=100%  align="center"  size=10   noshade="noshade">	
+	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+	<a class= "btn btn-default" href="{% url 'horarios:horario_list' %}">Cancelar</a>
+</form>
+{% endblock content %}

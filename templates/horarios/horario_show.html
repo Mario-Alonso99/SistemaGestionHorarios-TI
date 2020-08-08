@@ -1,0 +1,141 @@
+{% extends 'base/base_admin.html' %}
+{% block content %}
+<a class= "btn btn-danger" href="{% url 'horarios:horario_list' %}">Cancelar</a><br><br>
+
+
+	<table width="100%">
+            <td>
+                <label>Id Administrador</label>
+                {{ object.id_usuario }}
+            </td>
+        </table><br>
+        <table border="0" width="100%" class="col-lg-12">   
+            <tr>                    
+                <td>FECHA DE ELABORACIÓN</td>
+                <td>CUATRIMESTRE</td>
+                <td>GRUPO</td>
+                <td>ESPECIALIDAD</td>
+            </tr>   
+            
+            <tr>                    
+                <td>{{ object.fecha }}</td>
+				<td>{{ object.cuatrimestre }}</td>
+				<td>{{ object.grupo }}</td>
+				<td>{{ object.especialidad }}</td>
+			</tr>
+		</table>
+		<br><br><br>
+		<hr width=100%  align="center"  size=10   noshade="noshade">
+		<table>
+			<tr>
+                <th width="2%"> <center>Hora</center></th>
+                <th width="8%"> <center>Lu</center></th>
+                <th width="8%"> <center>Ma </center></th>
+                <th width="8%"> <center>Mi </center></th>
+                <th width="8%"> <center>Ju </center></th>
+                <th width="8%"> <center>Vi </center></th>
+            </tr>    
+		</table>
+
+		<table>   
+            <tr> 
+                <td>{{ object.hora1 }}</td>
+				<td>
+					{{ object.maestro_lun1 }}
+					{{ object.asignatura_lun1 }}
+					{{ object.ubicacion_lun1 }}
+				</td>
+				<td>
+					{{ object.maestro_mar1 }}
+					{{ object.asignatura_mar1 }}
+					{{ object.ubicacion_mar1 }}
+				</td>
+				<td>
+					{{ object.maestro_mie1 }}
+					{{ object.asignatura_mie1 }}
+					{{ object.ubicacion_mie1 }}
+				</td>
+				<td>
+					{{ object.maestro_jue1 }}
+					{{ object.asignatura_jue1 }}
+					{{ object.ubicacion_jue1 }}
+				</td>
+				<td>
+					{{ object.maestro_vie1 }}
+					{{ object.asignatura_vie1 }}
+					{{ object.ubicacion_vie1 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ object.hora2 }}</td>
+				<td>
+					{{ object.maestro_lun2 }}
+					{{ object.asignatura_lun2 }}
+					{{ object.ubicacion_lun2 }}
+				</td>
+				<td>
+					{{ object.maestro_mar2 }}
+					{{ object.asignatura_mar2 }}
+					{{ object.ubicacion_mar2 }}
+				</td>
+				<td>
+					{{ object.maestro_mie2 }}
+					{{ object.asignatura_mie2 }}
+					{{ object.ubicacion_mie2 }}
+				</td>
+				<td>
+					{{ object.maestro_jue2 }}
+					{{ object.asignatura_jue2 }}
+					{{ object.ubicacion_jue2 }}
+				</td>
+				<td>
+					{{ object.maestro_vie2 }}
+					{{ object.asignatura_vie2 }}
+					{{ object.ubicacion_vie2 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ object.hora3 }}</td>
+				<td>
+					{{ object.maestro_lun3 }}
+					{{ object.asignatura_lun3 }}
+					{{ object.ubicacion_lun3 }}
+				</td>
+				<td>
+					{{ object.maestro_mar3 }}
+					{{ object.asignatura_mar3 }}
+					{{ object.ubicacion_mar3 }}
+				</td>
+				<td>
+					{{ object.maestro_mie3 }}
+					{{ object.asignatura_mie3 }}
+					{{ object.ubicacion_mie3 }}
+				</td>
+				<td>
+					{{ object.maestro_jue3 }}
+					{{ object.asignatura_jue3 }}
+					{{ object.ubicacion_jue3 }}
+				</td>
+				<td>
+					{{ object.maestro_vie3 }}
+					{{ object.asignatura_vie3 }}
+					{{ object.ubicacion_vie3 }}
+				</td>
+			</tr>
+		</table>
+	<br>
+	<label>Anexos:</label>
+    {{ object.anexos }}
+	
+	<hr width=100%  align="center"  size=10   noshade="noshade">			
+	
+    <a class= "btn btn-success" href="{% url 'horarios:horario_list' %}">Regresar</a>
+    <a class= "btn btn-info" href="#">Editar</a>
+    <a class="btn btn-danger" href="#">Eliminar</a>
+{% endblock %}
