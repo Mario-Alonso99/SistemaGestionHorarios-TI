@@ -28,8 +28,7 @@
 				                        <ul class="dropdown-menu" role="menu">
 				                        	<li><a href="{% url 'horarios:horario_create' %}">Registrar</a></li>
 				                        	<li><a href="{% url 'horarios:horario_list' %}">Listar</a></li>
-				                        	<li><a href="#">Buscar/Filtrar</a></li>
-											<li><a href="#">Importar</a></li>
+				                        	<li><a href="{% url 'horarios:horario_search' %}">Buscar/Filtrar</a></li>
 				                        </ul>
 		                      		</li>
 									<li class="dropdown">
@@ -70,7 +69,6 @@
 		                        	<li class="dropdown">
 		                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
 		                        		<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Registrar Director</a></li>
 		                          			<li><a href="#">Salir</a></li>
 		                        		</ul>
 		                      		</li>

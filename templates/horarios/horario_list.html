@@ -1,6 +1,6 @@
 {% extends 'base/base_admin.html' %}
 {% block content %}
-<a class="btn btn-success" href="#">Descargar Excel</a><br>
+<br>
 <h3>Bienvenido/a Administrador: <strong>{{ user.first_name }} {{ user.last_name }}</strong></h3>
 <hr width=100%  align="center"  size=10   noshade="noshade">
 <table class="table table-bordered table-striped table-hover">
@@ -22,7 +22,7 @@
 				<td>{{ horario.cuatrimestre }}</td>
 				<td>{{ horario.grupo }}</td>
 				<td>
-					<a class="btn btn-success" href="{% url 'horarios:horario_show' horario.id %}">Ver</a>
+					<a class="btn btn-success" href="#">Ver</a>
 					<a class="btn btn-info" href="{% url 'horarios:horario_update' horario.id %}">Editar</a>
 					<a class="btn btn-danger" href="{% url 'horarios:horario_delete' horario.id %}">Eliminar</a>
 				</td>
