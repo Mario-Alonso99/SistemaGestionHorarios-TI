@@ -1,0 +1,327 @@
+{% extends 'base/base_admin.html' %}
+{% block content %}
+<a class= "btn btn-danger" href="{% url 'horarios:horario_list' %}">Cancelar</a><br><br>
+<form method="post">
+	{% csrf_token %}
+	<table width="100%">
+            <td>
+                <label>Id Administrador</label>
+                {{ form.id_usuario }}
+            </td>
+        </table><br>
+        <table border="0" width="100%" class="col-lg-12">   
+            <tr>                    
+                <td>FECHA DE ELABORACIÓN</td>
+                <td>CUATRIMESTRE</td>
+                <td>GRUPO</td>
+                <td>ESPECIALIDAD</td>
+            </tr>   
+            
+            <tr>                    
+                <td>{{ form.fecha }}</td>
+				<td>{{ form.cuatrimestre }}</td>
+				<td>{{ form.grupo }}</td>
+				<td>{{ form.especialidad }}</td>
+			</tr>
+		</table>
+		<br><br><br>
+		<hr width=100%  align="center"  size=10   noshade="noshade">
+		<table>
+			<tr>
+                <th width="2%"> <center>Hora</center></th>
+                <th width="8%"> <center>Lu</center></th>
+                <th width="8%"> <center>Ma </center></th>
+                <th width="8%"> <center>Mi </center></th>
+                <th width="8%"> <center>Ju </center></th>
+                <th width="8%"> <center>Vi </center></th>
+            </tr>    
+		</table>
+
+		<table>   
+            <tr> 
+                <td>{{ form2.hora1 }}</td>
+				<td>
+					{{ form2.maestro_lun1 }}
+					{{ form2.asignatura_lun1 }}
+					{{ form2.ubicacion_lun1 }}
+				</td>
+				<td>
+					{{ form2.maestro_mar1 }}
+					{{ form2.asignatura_mar1 }}
+					{{ form2.ubicacion_mar1 }}
+				</td>
+				<td>
+					{{ form2.maestro_mie1 }}
+					{{ form2.asignatura_mie1 }}
+					{{ form2.ubicacion_mie1 }}
+				</td>
+				<td>
+					{{ form2.maestro_jue1 }}
+					{{ form2.asignatura_jue1 }}
+					{{ form2.ubicacion_jue1 }}
+				</td>
+				<td>
+					{{ form2.maestro_vie1 }}
+					{{ form2.asignatura_vie1 }}
+					{{ form2.ubicacion_vie1 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form3.hora2 }}</td>
+				<td>
+					{{ form3.maestro_lun2 }}
+					{{ form3.asignatura_lun2 }}
+					{{ form3.ubicacion_lun2 }}
+				</td>
+				<td>
+					{{ form3.maestro_mar2 }}
+					{{ form3.asignatura_mar2 }}
+					{{ form3.ubicacion_mar2 }}
+				</td>
+				<td>
+					{{ form3.maestro_mie2 }}
+					{{ form3.asignatura_mie2 }}
+					{{ form3.ubicacion_mie2 }}
+				</td>
+				<td>
+					{{ form3.maestro_jue2 }}
+					{{ form3.asignatura_jue2 }}
+					{{ form3.ubicacion_jue2 }}
+				</td>
+				<td>
+					{{ form3.maestro_vie2 }}
+					{{ form3.asignatura_vie2 }}
+					{{ form3.ubicacion_vie2 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form4.hora3 }}</td>
+				<td>
+					{{ form4.maestro_lun3 }}
+					{{ form4.asignatura_lun3 }}
+					{{ form4.ubicacion_lun3 }}
+				</td>
+				<td>
+					{{ form4.maestro_mar3 }}
+					{{ form4.asignatura_mar3 }}
+					{{ form4.ubicacion_mar3 }}
+				</td>
+				<td>
+					{{ form4.maestro_mie3 }}
+					{{ form4.asignatura_mie3 }}
+					{{ form4.ubicacion_mie3 }}
+				</td>
+				<td>
+					{{ form4.maestro_jue3 }}
+					{{ form4.asignatura_jue3 }}
+					{{ form4.ubicacion_jue3 }}
+				</td>
+				<td>
+					{{ form4.maestro_vie3 }}
+					{{ form4.asignatura_vie3 }}
+					{{ form4.ubicacion_vie3 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form5.hora4 }}</td>
+				<td>
+					{{ form5.maestro_lun4 }}
+					{{ form5.asignatura_lun4 }}
+					{{ form5.ubicacion_lun4 }}
+				</td>
+				<td>
+					{{ form5.maestro_mar4 }}
+					{{ form5.asignatura_mar4 }}
+					{{ form5.ubicacion_mar4 }}
+				</td>
+				<td>
+					{{ form5.maestro_mie4 }}
+					{{ form5.asignatura_mie4 }}
+					{{ form5.ubicacion_mie4 }}
+				</td>
+				<td>
+					{{ form5.maestro_jue4 }}
+					{{ form5.asignatura_jue4 }}
+					{{ form5.ubicacion_jue4 }}
+				</td>
+				<td>
+					{{ form5.maestro_vie4 }}
+					{{ form5.asignatura_vie4 }}
+					{{ form5.ubicacion_vie4 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form6.hora5 }}</td>
+				<td>
+					{{ form6.maestro_lun5 }}
+					{{ form6.asignatura_lun5 }}
+					{{ form6.ubicacion_lun5 }}
+				</td>
+				<td>
+					{{ form6.maestro_mar5 }}
+					{{ form6.asignatura_mar5 }}
+					{{ form6.ubicacion_mar5 }}
+				</td>
+				<td>
+					{{ form6.maestro_mie5 }}
+					{{ form6.asignatura_mie5 }}
+					{{ form6.ubicacion_mie5 }}
+				</td>
+				<td>
+					{{ form6.maestro_jue5 }}
+					{{ form6.asignatura_jue5 }}
+					{{ form6.ubicacion_jue5 }}
+				</td>
+				<td>
+					{{ form6.maestro_vie5 }}
+					{{ form6.asignatura_vie5 }}
+					{{ form6.ubicacion_vie5 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form7.hora6 }}</td>
+				<td>
+					{{ form7.maestro_lun6 }}
+					{{ form7.asignatura_lun6 }}
+					{{ form7.ubicacion_lun6 }}
+				</td>
+				<td>
+					{{ form7.maestro_mar6 }}
+					{{ form7.asignatura_mar6 }}
+					{{ form7.ubicacion_mar6 }}
+				</td>
+				<td>
+					{{ form7.maestro_mie6 }}
+					{{ form7.asignatura_mie6 }}
+					{{ form7.ubicacion_mie6 }}
+				</td>
+				<td>
+					{{ form7.maestro_jue6 }}
+					{{ form7.asignatura_jue6 }}
+					{{ form7.ubicacion_jue6 }}
+				</td>
+				<td>
+					{{ form7.maestro_vie6 }}
+					{{ form7.asignatura_vie6 }}
+					{{ form7.ubicacion_vie6 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form8.hora7 }}</td>
+				<td>
+					{{ form8.maestro_lun7 }}
+					{{ form8.asignatura_lun7 }}
+					{{ form8.ubicacion_lun7 }}
+				</td>
+				<td>
+					{{ form8.maestro_mar7 }}
+					{{ form8.asignatura_mar7 }}
+					{{ form8.ubicacion_mar7 }}
+				</td>
+				<td>
+					{{ form8.maestro_mie7 }}
+					{{ form8.asignatura_mie7 }}
+					{{ form8.ubicacion_mie7 }}
+				</td>
+				<td>
+					{{ form8.maestro_jue7 }}
+					{{ form8.asignatura_jue7 }}
+					{{ form8.ubicacion_jue7 }}
+				</td>
+				<td>
+					{{ form8.maestro_vie7 }}
+					{{ form8.asignatura_vie7 }}
+					{{ form8.ubicacion_vie7 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form9.hora8 }}</td>
+				<td>
+					{{ form9.maestro_lun8 }}
+					{{ form9.asignatura_lun8 }}
+					{{ form9.ubicacion_lun8 }}
+				</td>
+				<td>
+					{{ form9.maestro_mar8 }}
+					{{ form9.asignatura_mar8 }}
+					{{ form9.ubicacion_mar8 }}
+				</td>
+				<td>
+					{{ form9.maestro_mie8 }}
+					{{ form9.asignatura_mie8 }}
+					{{ form9.ubicacion_mie8 }}
+				</td>
+				<td>
+					{{ form9.maestro_jue8 }}
+					{{ form9.asignatura_jue8 }}
+					{{ form9.ubicacion_jue8 }}
+				</td>
+				<td>
+					{{ form9.maestro_vie8 }}
+					{{ form9.asignatura_vie8 }}
+					{{ form9.ubicacion_vie8 }}
+				</td>
+			</tr>
+		</table>
+		<br>
+		<table>   
+            <tr> 
+                <td>{{ form10.hora9 }}</td>
+				<td>
+					{{ form10.maestro_lun9 }}
+					{{ form10.asignatura_lun9 }}
+					{{ form10.ubicacion_lun9 }}
+				</td>
+				<td>
+					{{ form10.maestro_mar9 }}
+					{{ form10.asignatura_mar9 }}
+					{{ form10.ubicacion_mar9 }}
+				</td>
+				<td>
+					{{ form10.maestro_mie9 }}
+					{{ form10.asignatura_mie9 }}
+					{{ form10.ubicacion_mie9 }}
+				</td>
+				<td>
+					{{ form10.maestro_jue9 }}
+					{{ form10.asignatura_jue9 }}
+					{{ form10.ubicacion_jue9 }}
+				</td>
+				<td>
+					{{ form10.maestro_vie9 }}
+					{{ form10.asignatura_vie9 }}
+					{{ form10.ubicacion_vie9 }}
+				</td>
+			</tr>
+		</table>
+	<br>
+	<label>Anexos:</label>
+    {{ form.anexos }}
+	
+	<hr width=100%  align="center"  size=10   noshade="noshade">			
+	
+	<button class="btn btn-success" type="submit">Guardar</button>
+	<a class= "btn btn-danger" href="{% url 'horarios:horario_list' %}">Cancelar</a>
+</form>
+{% endblock %}

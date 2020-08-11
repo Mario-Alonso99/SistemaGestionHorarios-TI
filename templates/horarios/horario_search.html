@@ -1,0 +1,63 @@
+{% extends 'base/base_admin.html' %}
+{% block content %}
+<a class= "btn btn-danger" href="{% url 'horarios:horario_list' %}">Cancelar</a><br>
+	<table class="table">
+		<tr>
+			<td><h4><strong>Buscar por:</strong></h4></td>
+		</tr>
+		<tr>
+			<form method="get">
+				<p>
+					<th>Especialidad: {{ filter.form.especialidad }} </th>
+					<th>Cuatrimestre: {{ filter.form.cuatrimestre }} </th>
+					<th>Grupo: {{ filter.form.grupo }} </th>
+					<th><button class="btn btn-primary" type="submit">Buscar</button></th>
+				</p>
+			</form>
+		</tr>
+	</table>
+<table class="table table-bordered table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Fecha</th>
+			<th>Especialidad</th>
+			<th>Cuatrimestre</th>
+			<th>Grupo</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% if filter.qs %}
+		{% for horario in filter.qs %}
+		<tr>
+			<td>{{ horario.fecha }}</td>
+			<td>{{ horario.especialidad }}</td>
+			<td>{{ horario.cuatrimestre }}</td>
+			<td>{{ horario.grupo }}</td>
+			<td>
+				<a class="btn btn-success" href="#">Ver</a>
+				<a class="btn btn-info" href="{% url 'horarios:horario_update' horario.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'horarios:horario_delete' horario.id %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+			<div class="alert alert-danger" role="alert">
+				AVISO: No Hay Registros de Horarios. <a href="{% url 'horarios:horario_create' %}" class="alert-link"> Click Aquí para Registrar </a>	 
+			</div>
+		{% endif %}
+	</tbody>
+</table>
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+    </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> 
+    	{% endif %}
+    </li>
+</ul> 
+{% endblock %}

@@ -24,3 +24,6 @@ class Teacher(User):
     tipo = models.TextField(null=False, blank=False, verbose_name="Tipo", max_length=20, default='Docente')
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

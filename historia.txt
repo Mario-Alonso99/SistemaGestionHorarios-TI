@@ -114,3 +114,5 @@ Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del
     -Autentificación (100%)
     -Bloqueo de accesos que no esten registrados (100%)
     -Desencriptación para autentificación de contraseñas (100%)
+
+Mario Alberto Alonso Alvarado - > Gestión de Horarios (Gestion al 70%) (10/08/2020) Create, Update, Delete, Search y List
