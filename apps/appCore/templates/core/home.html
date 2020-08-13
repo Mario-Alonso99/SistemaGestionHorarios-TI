@@ -1,0 +1,57 @@
+{% load static %}
+<head>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+<link href="static/core/bootstrap/css/bootstrap.min.css" rel= "stylesheet">
+<link href="static/core/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="static/core/css/style-panel.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body class="body">
+  <div class="container">
+
+    <!-- Fila exterior-->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+          <!-- Fila anidada dentro del cuerpo -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block"> <img src="static/core/img/uttlaxcala.png" class="utt-login"></div>
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h1 class="h1 mb-4"> <i class="fas fa-laptop-code"></i> Bienvenido TI !!</h1>
+                    </div>
+                    
+                    <div class="form-group">  
+                      <a class="btn btn-danger btn-user btn-block " href="{% url 'loginAdmin' %}"><i class="fas fa-user"></i> Administrador</a>
+                    </div>
+                    
+                    <div class="form-group">
+                      <a class="btn btn-success btn-user btn-block" href="{% url 'login' %}"><i class="fas fa-book-reader"></i> Director</a>
+                    </div>
+                    
+                    <div class="form-group">
+                      <a class="btn btn-secondary btn-user btn-block" href="#"><i class="fas fa-chalkboard-teacher"></i> Docente</a>
+                    </div>
+                    
+                    <div class="form-group">
+                        <a class="btn btn-primary btn-user btn-block" href="#"><i class="fa fa-user-graduate"></i> Estudiante</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

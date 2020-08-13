@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from apps.appDirection.administrators.views import AdministratorCreate, AdministratorList, AdministratorUpdate, AdministratorDelete, AdministratorShow, search, AdministratorReport
+from apps.appDirection.administrators.views import AdministratorCreate, AdministratorList, AdministratorUpdate, AdministratorDelete, AdministratorShow, search, AdministratorReport, RegistroUsuario
 
 
 administratorpatterns = ([
@@ -12,4 +12,5 @@ administratorpatterns = ([
     path('search/', login_required(search), name='administrator_search'),
     path('report/', login_required(AdministratorReport.as_view()), name='report'),
     
+    path('registrarAdmin/', login_required (RegistroUsuario.as_view()), name='registrar'),
 ], 'administrators')

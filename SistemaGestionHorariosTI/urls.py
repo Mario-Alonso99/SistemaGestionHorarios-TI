@@ -27,12 +27,15 @@ from apps.appDirection.teachers.urls import teacherpatterns
 from apps.appDirection.asignaturas.urls import asignaturapatterns
 from apps.appDirection.administrators.urls import administratorpatterns
 from apps.appAdministrator.horarios.urls import horariospatterns
+from apps.appCore.urls import corepatterns
 
-
-#Importación de los Recrusos para Login
+#Importación de los Recursos para Login de Director
 from apps.appDirection.users.views import Login, logoutUser
 from django.contrib.auth.decorators import login_required
 
+#Importación de los Recursos para Login de Administrador
+from apps.appAdministrator.AdminUsers.views import LoginAdmin, logoutUserAdmin
+from django.contrib.auth.decorators import login_required
 
 
 #Patters de las Urls
@@ -46,8 +49,12 @@ urlpatterns = [
     path('administrators/', include (administratorpatterns)),
     path('horarios/', include (horariospatterns)),
 
-
     #Patterns de los Inicio de Sesión
     path('accounts/login/', Login.as_view(), name='login'),
     path('logout/',login_required(logoutUser), name='logout'),
+
+    path('administrador/login/', LoginAdmin.as_view(), name='loginAdmin'),
+    path('logoutAdmin/',login_required(logoutUserAdmin), name='logoutAdmin'),
+
+    path ('', include(corepatterns)),
 ]

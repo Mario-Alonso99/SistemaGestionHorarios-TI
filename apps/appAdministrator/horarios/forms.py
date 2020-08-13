@@ -3,6 +3,12 @@ from django import forms
 #Empleamos los modelos creados
 from apps.appAdministrator.horarios.models import Cabecera, Contenido, SecondContenido, ThirdContenido
 
+from datetime import date
+from datetime import datetime
+
+#Fecha actual
+now = date.today()
+
 class HorarioFormHead(forms.ModelForm):
 	class Meta:
 		model = Cabecera
@@ -26,7 +32,7 @@ class HorarioFormHead(forms.ModelForm):
 
 		widgets = {
 			'id_usuario': forms.TextInput(attrs={'class':'form-control'}),
-			'fecha': forms.TextInput(attrs={'class':'form-control'}),
+			'fecha': forms.DateInput(attrs={'class':'form-control', 'value':now, 'readonly':'True'}),
 			'especialidad': forms.Select(attrs={'class':'form-control'}),
 			'cuatrimestre': forms.Select(attrs={'class':'form-control'}),
 			'grupo': forms.Select(attrs={'class':'form-control'}),
@@ -60,7 +66,7 @@ class HorarioFormBody1(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora1': forms.TextInput(attrs={'class':'form-control'}),
+			'hora1': forms.TextInput(attrs={'class':'form-control', 'value':'7:00 - 8:00', 'readonly':'True'}),
     		'maestro_lun1': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun1': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun1': forms.Select(attrs={'class':'form-control'}),
@@ -106,7 +112,7 @@ class HorarioFormBody2(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora2': forms.TextInput(attrs={'class':'form-control'}),
+			'hora2': forms.TextInput(attrs={'class':'form-control', 'value':'8:00 - 9:00', 'readonly':'True'}),
     		'maestro_lun2': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun2': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun2': forms.Select(attrs={'class':'form-control'}),
@@ -152,7 +158,7 @@ class HorarioFormBody3(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora3': forms.TextInput(attrs={'class':'form-control'}),
+			'hora3': forms.TextInput(attrs={'class':'form-control', 'value':'9:00 - 10:00', 'readonly':'True'}),
     		'maestro_lun3': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun3': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun3': forms.Select(attrs={'class':'form-control'}),
@@ -198,7 +204,7 @@ class HorarioFormBody4(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora4': forms.TextInput(attrs={'class':'form-control'}),
+			'hora4': forms.TextInput(attrs={'class':'form-control', 'value':'10:00 - 11:00', 'readonly':'True'}),
     		'maestro_lun4': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun4': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun4': forms.Select(attrs={'class':'form-control'}),
@@ -243,7 +249,7 @@ class HorarioFormBody5(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora5': forms.TextInput(attrs={'class':'form-control'}),
+			'hora5': forms.TextInput(attrs={'class':'form-control', 'value':'11:00 - 12:00', 'readonly':'True'}),
     		'maestro_lun5': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun5': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun5': forms.Select(attrs={'class':'form-control'}),
@@ -289,7 +295,7 @@ class HorarioFormBody6(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora6': forms.TextInput(attrs={'class':'form-control'}),
+			'hora6': forms.TextInput(attrs={'class':'form-control', 'value':'12:00 - 13:00', 'readonly':'True'}),
     		'maestro_lun6': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun6': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun6': forms.Select(attrs={'class':'form-control'}),
@@ -334,7 +340,7 @@ class HorarioFormBody7(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora7': forms.TextInput(attrs={'class':'form-control'}),
+			'hora7': forms.TextInput(attrs={'class':'form-control', 'value':'13:00 - 14:00', 'readonly':'True'}),
     		'maestro_lun7': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun7': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun7': forms.Select(attrs={'class':'form-control'}),
@@ -379,7 +385,7 @@ class HorarioFormBody8(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora8': forms.TextInput(attrs={'class':'form-control'}),
+			'hora8': forms.TextInput(attrs={'class':'form-control', 'value':'14:00 - 15:00', 'readonly':'True'}),
     		'maestro_lun8': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun8': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun8': forms.Select(attrs={'class':'form-control'}),
@@ -424,7 +430,7 @@ class HorarioFormBody9(forms.ModelForm):
 		}
 
 		widgets = {
-			'hora9': forms.TextInput(attrs={'class':'form-control'}),
+			'hora9': forms.TextInput(attrs={'class':'form-control', 'value':'15:00 - 16:00', 'readonly':'True'}),
     		'maestro_lun9': forms.Select(attrs={'class':'form-control'}),
 			'asignatura_lun9': forms.Select(attrs={'class':'form-control'}),
 			'ubicacion_lun9': forms.Select(attrs={'class':'form-control'}),

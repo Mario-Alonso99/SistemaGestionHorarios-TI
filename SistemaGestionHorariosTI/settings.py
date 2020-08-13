@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'apps.appDirection.asignaturas',
     'apps.appDirection.administrators',
     'apps.appAdministrator.horarios',
+    'apps.appAdministrator.AdminUsers',
+    'apps.appCore',
 
 
 
