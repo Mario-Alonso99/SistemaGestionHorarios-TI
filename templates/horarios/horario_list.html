@@ -22,7 +22,7 @@
 				<td>{{ horario.cuatrimestre }}</td>
 				<td>{{ horario.grupo }}</td>
 				<td>
-					<a class="btn btn-success" href="#">Ver</a>
+					<a class="btn btn-success" href="{% url 'horarios:horario_show' horario.id %}">Ver</a>
 					<a class="btn btn-info" href="{% url 'horarios:horario_update' horario.id %}">Editar</a>
 					<a class="btn btn-danger" href="{% url 'horarios:horario_delete' horario.id %}">Eliminar</a>
 				</td>

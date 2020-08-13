@@ -3,6 +3,9 @@ from apps.appDirection.administrators.models import Administrator
 
 from django.contrib.auth.forms import UserCreationForm
 
+#Lineas del formulario de registro de Administradores
+from django.contrib.auth.models import User
+
 class RegistroForm(UserCreationForm):
 	class Meta:
 		model = Administrator
@@ -45,4 +48,22 @@ class RegistroForm(UserCreationForm):
 			'last_name': forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Muñoz Hernández', 'required': 'required'}),
 			'email': forms.EmailInput(attrs={'class':'form-control', 'placeholder': 'dan.08@gmail.com', 'required': 'required'}),
 		
+		}
+
+
+#Módelo para formulario de Registro de Administrador
+class FormAdmin(UserCreationForm):
+	class Meta:
+		model = User
+		fields = [
+				'username',
+				'first_name',
+				'last_name',
+				'email',
+			]
+		labels = {
+				'username': 'Nombre de usuario',
+				'first_name': 'Nombre',
+				'last_name': 'Apellidos',
+				'email': 'Correo',
 		}

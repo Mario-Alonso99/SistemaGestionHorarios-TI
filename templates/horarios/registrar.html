@@ -4,19 +4,21 @@
 <form method="post">
 	{% csrf_token %}
 	<table width="100%">
-            <td>
-                <label>Id Administrador</label>
-                {{ form.id_usuario }}
+            <td hidden>
+			<div class="form-group" hidden>
+				<label >Administrador:</label>
+				<input class="form-control" type="text" name="id_usuario" value="{{ user.first_name }} {{ user.last_name }}">
+				<small style="color:red;">*Requerido. Ingresa la contraseña ingresa anteriormenrte.</small>
+			</div>
             </td>
         </table><br>
         <table border="0" width="100%" class="col-lg-12">   
             <tr>                    
-                <td>FECHA DE ELABORACIÓN</td>
-                <td>CUATRIMESTRE</td>
-                <td>GRUPO</td>
-                <td>ESPECIALIDAD</td>
-            </tr>   
-            
+                <th>Fecha de elaboración:</th>
+                <th>Cuatrimestre:</th>
+                <th>Grupo:</th>
+                <th>Especialidad:</th>
+            </tr>           
             <tr>                    
                 <td>{{ form.fecha }}</td>
 				<td>{{ form.cuatrimestre }}</td>

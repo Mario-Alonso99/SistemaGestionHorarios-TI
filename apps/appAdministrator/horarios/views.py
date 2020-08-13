@@ -261,3 +261,46 @@ def search(request):
     horario_list = Cabecera.objects.order_by('especialidad', 'cuatrimestre', 'grupo')
     horario_filter = HorarioFilter(request.GET, queryset=horario_list)
     return render(request, 'horarios/horario_search.html', {'filter': horario_filter})
+
+#Clase de Detalles de Registros
+class HorarioShow(DetailView):
+    model = Cabecera
+    second_model = Contenido
+    third_model = SecondContenido
+    four_model = ThirdContenido
+    
+    template_name = 'horarios/horario_show.html'
+    form_class = HorarioFormHead
+    
+    success_url = reverse_lazy('horarios:horario_list')
+
+    def get_context_data(self, **kwargs):
+        context = super(HorarioShow, self).get_context_data(**kwargs)
+        pk = self.kwargs.get('pk', 0)
+        cabecera = self.model.objects.get(id=pk)
+
+        if 'form' not in context:
+            context['form'] = self.form_class(self.request.GET)
+        
+        if 'form2' not in context:
+            context['form2'] = self.second_model.objects.get(cabecera1=cabecera.id)
+        if 'form3' not in context:
+            context['form3'] = self.second_model.objects.get(cabecera2=cabecera.id)
+        if 'form4' not in context:
+            context['form4'] = self.second_model.objects.get(cabecera3=cabecera.id)
+
+        if 'form5' not in context:
+            context['form5'] = self.third_model.objects.get(cabecera4=cabecera.id)
+        if 'form6' not in context:
+            context['form6'] = self.third_model.objects.get(cabecera5=cabecera.id)
+        if 'form7' not in context:
+            context['form7'] = self.third_model.objects.get(cabecera6=cabecera.id)
+
+        if 'form8' not in context:
+            context['form8'] = self.four_model.objects.get(cabecera7=cabecera.id)
+        if 'form9' not in context:
+            context['form9'] = self.four_model.objects.get(cabecera8=cabecera.id)
+        if 'form10' not in context:
+            context['form10'] = self.four_model.objects.get(cabecera9=cabecera.id)
+
+        return context

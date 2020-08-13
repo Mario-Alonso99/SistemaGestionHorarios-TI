@@ -1,0 +1,27 @@
+.utt-login{
+    margin-left: 80px;
+    margin-top: 45px;
+    width: 70%;
+}
+.col-lg-6{
+    margin-left: -30px;
+}
+
+.body{
+    background-color: rgba(0, 0, 0, 0.877);
+}
+
+.col-xl-10 .col-lg-12 .col-md-9 {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.form-group{
+    background-color: rgb(233, 174, 64);
+}
+
+.h1{
+    font-family: cursive;
+    font-style: italic;
+    font-size: 35px;
+}

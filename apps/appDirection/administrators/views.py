@@ -14,6 +14,10 @@ from tablib import Dataset
 from .resources import AdministratorResource
 from .models import Administrator
 
+#Lineas de importación de los requerimientos necesarios de registro de Administradores
+from django.contrib.auth.models import User
+from apps.appDirection.administrators.forms import FormAdmin
+
 # Create your views here.
 
 class AdministratorCreate(CreateView):
@@ -173,3 +177,10 @@ def importar(request):
             administrator_resource.import_data(dataset, dry_run=False) # Actually import now
             return redirect(reverse_lazy('administrators:administrator_list'))
     return render(request, 'administrators/administrator_import.html')"""
+
+#Vista de Registro de Administradores
+class RegistroUsuario(CreateView):
+    model = User
+    form_class = FormAdmin
+    template_name = 'administrators/registrarAdmin.html'
+    success_url = reverse_lazy('students:student_list')

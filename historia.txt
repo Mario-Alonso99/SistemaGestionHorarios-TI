@@ -116,3 +116,8 @@ Mario Alberto Alonso Alvarado && Daniela Muñoz Hernández primera revisión del
     -Desencriptación para autentificación de contraseñas (100%)
 
 Mario Alberto Alonso Alvarado - > Gestión de Horarios (Gestion al 70%) (10/08/2020) Create, Update, Delete, Search y List
+
+Mario Alberto Alonso Alvarado -> Gestión de Horarios (Gestión al 100%) (13/08/2020)
+Mario Alberto Alonso Alvarado -> Implementación del Login de Administrador (Gestión al 100%) (13/08/2020)
+
+Mario Alberto Alonso Alvarado -> Módulo de Administrador Concluido al 100% (13/08/2020)
